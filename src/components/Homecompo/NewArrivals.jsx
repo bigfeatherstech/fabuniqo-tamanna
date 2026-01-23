@@ -37,11 +37,11 @@ const NewArrivals = () => {
               NEW ARRIVALS
             </span>
           </div>
-          
+
           <h2 className="font-playfair text-2xl md:text-3xl font-semibold text-[#0e0e0e] mb-3">
             Latest <span style={{ color: fabuniqoGold }}>Collections</span>
           </h2>
-          
+
           <p className="font-Noto text-sm text-gray-600">
             Fresh styles just added to our collection
           </p>
@@ -61,11 +61,11 @@ const NewArrivals = () => {
                   alt={product.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                
+
                 {/* Discount Badge */}
                 {product.discount && (
                   <div className="absolute top-3 left-3">
-                    <span 
+                    <span
                       className="px-3 py-1 text-xs font-Noto font-bold text-white rounded"
                       style={{ backgroundColor: fabuniqoGold }}
                     >
@@ -73,16 +73,16 @@ const NewArrivals = () => {
                     </span>
                   </div>
                 )}
-                
+
                 {/* Quick Actions */}
                 <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button 
+                  <button
                     className="p-2 bg-white rounded-full hover:bg-[rgb(209,167,67)] hover:text-white transition-colors duration-200 shadow-sm"
                     aria-label="Add to wishlist"
                   >
                     <Heart className="w-3 h-3" />
                   </button>
-                  <button 
+                  <button
                     className="p-2 bg-white rounded-full hover:bg-[rgb(209,167,67)] hover:text-white transition-colors duration-200 shadow-sm"
                     aria-label="Quick view"
                   >
@@ -90,9 +90,9 @@ const NewArrivals = () => {
                   </button>
                 </div>
 
-         
+
               </div>
-              
+
               {/* Product Info */}
               <div className="p-4">
                 <div className="mb-1">
@@ -100,11 +100,11 @@ const NewArrivals = () => {
                     {product.category}
                   </span>
                 </div>
-                
+
                 <h3 className="font-Noto text-sm font-semibold text-[#0e0e0e] line-clamp-1 mb-2 group-hover:text-[rgb(209,167,67)] transition-colors">
                   {product.title}
                 </h3>
-                
+
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
                     <span className="font-Noto text-lg font-bold text-[#0e0e0e]">
@@ -112,19 +112,19 @@ const NewArrivals = () => {
                     </span>
                     {product.discount && (
                       <span className="font-Noto text-xs text-gray-400 line-through">
-                        ${(product.price / (1 - product.discount/100)).toFixed(2)}
+                        ${(product.price / (1 - product.discount / 100)).toFixed(2)}
                       </span>
                     )}
                   </div>
-                  
+
                   <div className="flex items-center gap-1">
                     <Star className="w-3 h-3 text-yellow-400 fill-current" />
                     <span className="font-Noto text-xs font-medium">{product.rating}</span>
                   </div>
                 </div>
-                
+
                 {/* Add to Cart Button */}
-                <button 
+                <button
                   className="w-full py-2 text-xs font-Noto font-semibold rounded bg-gray-100 text-gray-800 hover:bg-[rgb(209,167,67)] hover:text-white transition-all duration-200 flex items-center justify-center gap-2 group-hover:bg-[rgb(209,167,67)] group-hover:text-white"
                 >
                   <ShoppingBag className="w-3 h-3" />
@@ -137,12 +137,33 @@ const NewArrivals = () => {
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <button 
+          <button
+            className="relative px-8 py-3 font-Noto font-bold text-sm border overflow-hidden group transition-all duration-500 rounded-full active:scale-95 hover:shadow-[0_10px_20px_rgba(209,167,67,0.2)]"
+            style={{
+              borderColor: 'rgb(209,167,67)', // Using your fabuniqoGold color
+              color: 'rgb(209,167,67)'
+            }}
+          >
+            {/* Text Layer - Z-index ensures it stays above the fill */}
+            <span className="relative z-10 group-hover:text-white transition-colors duration-300 uppercase tracking-widest">
+              View All Products
+            </span>
+
+            {/* Background Liquid Fill - Expands from left to right */}
+            <span
+              className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"
+              style={{ backgroundColor: 'rgb(209,167,67)' }}
+            ></span>
+
+            {/* Premium Shimmer Streak - Sweeps across on hover */}
+            <span className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:left-[100%] transition-all duration-1000 ease-in-out"></span>
+          </button>
+          {/* <button 
             className="px-8 py-3 font-Noto font-medium text-sm border border-[rgb(209,167,67)] text-[rgb(209,167,67)] hover:bg-[rgb(209,167,67)] hover:text-white transition-all duration-300 rounded-full"
             style={{ borderColor: fabuniqoGold }}
           >
             View All Products
-          </button>
+          </button> */}
         </div>
       </div>
     </section>

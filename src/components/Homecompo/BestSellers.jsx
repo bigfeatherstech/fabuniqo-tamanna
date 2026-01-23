@@ -3,7 +3,7 @@ import { Star, ShoppingBag, Heart, Eye, TrendingUp } from 'lucide-react';
 
 const BestSellers = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  
+
   const bestSellers = [
     { id: 1, name: 'Silk Evening Gown', category: 'Dresses', price: 299.99, discount: 25, rating: 4.9, sold: 124, image: 'https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=300&auto=format&fit=crop' },
     { id: 2, name: 'Leather Jacket', category: 'Outerwear', price: 189.99, discount: 20, rating: 4.8, sold: 98, image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=300&auto=format&fit=crop' },
@@ -48,11 +48,10 @@ const BestSellers = () => {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-3 py-1.5 rounded-full font-Noto text-xs font-medium transition-all duration-200 ${
-                  activeFilter === filter
+                className={`px-3 py-1.5 rounded-full font-Noto text-xs font-medium transition-all duration-200 ${activeFilter === filter
                     ? 'bg-[rgb(209,167,67)] text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
-                }`}
+                  }`}
               >
                 {filter.charAt(0).toUpperCase() + filter.slice(1)}
               </button>
@@ -74,10 +73,10 @@ const BestSellers = () => {
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                
+
                 {/* Badges */}
                 <div className="absolute top-3 left-3">
-                  <span 
+                  <span
                     className="px-3 py-1 text-xs font-Noto font-bold text-white rounded"
                     style={{ backgroundColor: 'rgb(209,167,67)' }}
                   >
@@ -94,13 +93,13 @@ const BestSellers = () => {
 
                 {/* Quick Actions */}
                 <div className="absolute top-12 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <button 
+                  <button
                     className="p-2 bg-white rounded-full hover:bg-[rgb(209,167,67)] hover:text-white transition-colors duration-200 shadow-sm"
                     aria-label="Add to wishlist"
                   >
                     <Heart className="w-3 h-3" />
                   </button>
-                  <button 
+                  <button
                     className="p-2 bg-white rounded-full hover:bg-[rgb(209,167,67)] hover:text-white transition-colors duration-200 shadow-sm"
                     aria-label="Quick view"
                   >
@@ -125,29 +124,29 @@ const BestSellers = () => {
                     {product.category}
                   </span>
                 </div>
-                
+
                 <h3 className="font-Noto text-sm font-semibold text-[#0e0e0e] line-clamp-1 mb-2 group-hover:text-[rgb(209,167,67)] transition-colors">
                   {product.name}
                 </h3>
-                
+
                 <div className="flex items-center justify-between mb-3">
                   <div className="flex items-center gap-2">
                     <span className="font-Noto text-lg font-bold text-[#0e0e0e]">
                       {formatPrice(product.price)}
                     </span>
                     <span className="font-Noto text-xs text-gray-400 line-through">
-                      ${(product.price / (1 - product.discount/100)).toFixed(2)}
+                      ${(product.price / (1 - product.discount / 100)).toFixed(2)}
                     </span>
                   </div>
-                  
+
                   <div className="flex items-center gap-1">
                     <Star className="w-3 h-3 text-yellow-400 fill-current" />
                     <span className="font-Noto text-xs font-medium">{product.rating}</span>
                   </div>
                 </div>
-                
+
                 {/* Add to Cart Button */}
-                <button 
+                <button
                   className="w-full py-2 text-xs font-Noto font-semibold rounded bg-gray-100 text-gray-800 hover:bg-[rgb(209,167,67)] hover:text-white transition-all duration-200 flex items-center justify-center gap-2 group-hover:bg-[rgb(209,167,67)] group-hover:text-white"
                 >
                   <ShoppingBag className="w-3 h-3" />
@@ -160,11 +159,19 @@ const BestSellers = () => {
 
         {/* View All Button - Matching NewArrivals Style */}
         <div className="text-center mt-12">
-          <button 
-            className="px-8 py-3 font-Noto font-medium text-sm border border-[rgb(209,167,67)] text-[rgb(209,167,67)] hover:bg-[rgb(209,167,67)] hover:text-white transition-all duration-300 rounded-full"
-            style={{ borderColor: 'rgb(209,167,67)' }}
+          <button
+            className="relative px-8 py-3 font-Noto font-bold text-sm border border-[#D1A743] text-[#D1A743] group overflow-hidden transition-all duration-500 rounded-full hover:shadow-[0_10px_20px_rgba(209,167,67,0.2)] active:scale-95"
           >
-            View All Best Sellers
+            {/* Text Layer */}
+            <span className="relative z-10 group-hover:text-white transition-colors duration-300 uppercase tracking-widest">
+              View All Best Sellers
+            </span>
+
+            {/* Background Fill */}
+            <span className="absolute inset-0 bg-[#D1A743] scale-x-0 group-hover:scale-x-100 top-0 -left-[100%] transition-transform duration-500 "></span>
+
+            {/* Shimmer / Light Streak Effect */}
+            <span className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:left-[100%] transition-all duration-700 ease-in-out"></span>
           </button>
         </div>
       </div>

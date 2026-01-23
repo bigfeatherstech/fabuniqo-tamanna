@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import logo from "../assets/fabniquo logo.jpeg";
+import logo from "../assets/logo1.png";
 import { NavLink, Link } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { CgProfile } from "react-icons/cg";
