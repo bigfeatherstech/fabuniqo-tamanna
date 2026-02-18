@@ -73,7 +73,7 @@ export default function Homepage() {
       )}
       {/* <BestSellers /> */}
       <FashionStories />
-      {/* <TrendingNow /> */}
+      <TrendingNow />
       {showSkeletons ? (
         <FashionEcomGallerySkeleton />) : (
         <FashionEcomGallery />

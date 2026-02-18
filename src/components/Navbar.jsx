@@ -40,9 +40,20 @@ function Navbar() {
   return (
     <>
       {/* Top Announcement Bar - Hidden on mobile for space */}
-      <div className="hidden sm:block bg-gradient-to-r from-[#d5a541] to-[#b08535] text-white text-center py-2 px-4 text-xs sm:text-sm font-medium">
+      {/* <div className="hidden sm:block bg-gradient-to-r from-[#d5a541] to-[#b08535] text-white text-center py-2 px-4 text-xs sm:text-sm font-medium animate-slow-float">
         🎁 Free Shipping on Orders Over $50 | New Collection Launching Soon!
-      </div>
+      </div> */}
+
+<div className="hidden sm:block bg-gradient-to-r from-[#d5a541] to-[#b08535] overflow-hidden">
+  <div className="animate-zoom-color">
+    <div className="text-center py-2 px-4 font-medium text-sm sm:text-base text-white">
+      🎁 Free Shipping on Orders Over $50 | New Collection Launching Soon!
+    </div>
+  </div>
+</div>
+
+
+
 
       {/* Main Navbar */}
       <nav 
@@ -242,3 +253,22 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -74,7 +74,7 @@ const CategoryGrid = () => {
         </div>
 
         {/* Minimalist Stat Bar */}
-        <div className="mt-28 flex flex-wrap justify-between items-center border-t border-gray-100 pt-12 gap-8">
+        {/* <div className="mt-28 flex flex-wrap justify-between items-center border-t border-gray-100 pt-12 gap-8">
           {[
             { l: 'Curated Brands', v: '200+' },
             { l: 'Exclusive Pieces', v: '5K+' },
@@ -86,10 +86,49 @@ const CategoryGrid = () => {
               <span className="text-[9px] leading-tight font-bold text-gray-400 uppercase tracking-widest w-20">{s.l}</span>
             </div>
           ))}
-        </div>
+        </div> */}
+
+
+        <div className="mt-16 sm:mt-20 md:mt-24 lg:mt-28 border-t border-gray-100 pt-8 sm:pt-10 md:pt-12">
+  <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4 md:gap-6 lg:gap-8">
+    {[
+      { l: 'Curated Brands', v: '200+' },
+      { l: 'Exclusive Pieces', v: '5K+' },
+      { l: 'Concierge Service', v: '24/7' },
+      { l: 'Verified Quality', v: '100%' }
+    ].map((s, i) => (
+      <div 
+        key={i} 
+        className="flex flex-col items-center text-center sm:text-left sm:items-start"
+      >
+        <span className="font-playfair text-2.5xl sm:text-3xl md:text-3xl lg:text-3.5xl font-bold text-gray-900 mb-1 sm:mb-2">
+          {s.v}
+        </span>
+        <span className="text-[10px] sm:text-[9px] md:text-[10px] lg:text-[11px] leading-tight font-bold text-gray-400 uppercase tracking-wider sm:tracking-widest px-2 sm:px-0">
+          {s.l}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
       </div>
     </section>
   );
 };
 
 export default CategoryGrid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
