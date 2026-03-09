@@ -1,10 +1,34 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Roboto+Flex:opsz,wght,XOPQ,XTRA,YOPQ,YTDE,YTFI,YTLC,YTUC@8..144,100..1000,96,468,79,-203,738,514,712&display=swap');
 
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Update these in your global CSS to use what you actually imported */
+
+.font-main {
+  font-family:  'ui-sans-serif', 'system-ui', 'sans-serif';
+}
+
+.font-display {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-accent {
+  font-family: 'Noto Serif', serif;
+}
+
+body{
+   font-family:  'ui-sans-serif', 'system-ui', 'sans-serif';
+}
+h1,h2,h3,p{
+   font-family:  'ui-sans-serif', 'system-ui', 'sans-serif';
+}
+
+
+
 
 * {
   margin: 0;
@@ -59,8 +83,6 @@
 }
 
 
-/* Add these styles */
-/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap'); */
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-hide::-webkit-scrollbar {
@@ -148,48 +170,22 @@ html {
   writing-mode: vertical-rl;
 }
 
-/* Smooth transitions */
-* {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-@keyframes zoomColorShift {
-  0% {
-    transform: scale(1);
-    color: #ffffff;
+@keyframes bounceSoft {
+  0%, 100% {
+    transform: translateY(0);
   }
-
   50% {
-    transform: scale(1.05);
-    color: #000000;
-  }
-
-  100% {
-    transform: scale(1);
-    color: #ffffff;
+    transform: translateY(-8px);
   }
 }
 
-.animate-zoom-color {
-  animation: zoomColorShift 6s ease-in-out infinite;
-  transform-origin: center;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+.animate-bounce-soft {
+  animation: bounceSoft 1.5s ease-in-out infinite;
 }
 
 
@@ -198,3 +194,34 @@ html {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes floatSlow {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes floatSlow2 {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(12px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-floatSlow{
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-floatSlow2{
+  animation: floatSlow2 7s ease-in-out infinite;
+}

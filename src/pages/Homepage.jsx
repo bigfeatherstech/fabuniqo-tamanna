@@ -19,6 +19,7 @@ import AsSeenOn from '../components/Homecompo/AsSeenOn'
 import VIPMembership from '../components/Homecompo/VIPMembership'
 import BrandArchiveTimeline from '../components/Homecompo/BrandArchiveTimeline'
 import MaterialDeepDive from '../components/Homecompo/MaterialDeepDive'
+import ShopBySlider from '../components/Homecompo/ShopBySlider'
 
 
 
@@ -55,6 +56,7 @@ export default function Homepage() {
       ) : (
         <ShopByCategory />
       )}
+      <ShopBySlider/>
       {showSkeletons ? (
         <CategoryGridSkeleton />) : (
         <CategoryGrid />

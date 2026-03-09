@@ -48,7 +48,7 @@ const BackToTop = () => {
         </div>
 
         {/* The Button Body */}
-        <div className="relative overflow-hidden bg-black border border-white/10 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 group-hover:border-[rgb(209,167,67)]">
+        <div className="relative mb-20 overflow-hidden bg-black border border-white/10 w-14 h-14 rounded-full flex items-center justify-center transition-all duration-500 group-hover:border-[rgb(209,167,67)]">
           <ArrowUp 
             size={20} 
             className="text-white group-hover:-translate-y-12 transition-transform duration-500" 

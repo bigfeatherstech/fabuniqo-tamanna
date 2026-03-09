@@ -1,16 +1,17 @@
 import React, { useRef } from 'react';
 import { ChevronRight, ArrowUpRight } from 'lucide-react';
+import logo from "../../assets/logo1.png";
 
 const BrandShowcase = () => {
   const scrollRef = useRef(null);
   const fabniquoGold = "rgb(209,167,67)";
 
   const brands = [
-    { name: "AAVARAN", desc: "Handcrafted block prints from Udaipur", category: "Sustainable Ethnic" },
-    { name: "SHAZÉ", desc: "Bold, edgy jewelry for the modern woman", category: "Luxury Accessories" },
-    { name: "RAW MANGO", desc: "Redefining Indian textiles", category: "High Fashion" },
-    { name: "MULMUL", desc: "Lightweight embroidery on pure cotton", category: "Designer Kurtas" },
-    { name: "ANITA D.", desc: "Timeless elegance in luxury pret", category: "Couture" },
+    { name: "AAVARAN", desc: "Handcrafted block prints from Udaipur", category: "Sustainable Ethnic",logo:logo },
+    { name: "SHAZÉ", desc: "Bold, edgy jewelry for the modern woman", category: "Luxury Accessories",logo:logo  },
+    { name: "RAW MANGO", desc: "Redefining Indian textiles", category: "High Fashion" , logo:logo },
+    { name: "MULMUL", desc: "Lightweight embroidery on pure cotton", category: "Designer Kurtas", logo:logo  },
+    { name: "ANITA D.", desc: "Timeless elegance in luxury pret", category: "Couture", logo:logo  },
   ];
 
   return (
@@ -18,29 +19,51 @@ const BrandShowcase = () => {
     <section className="relative z-10 bg-white pt-20 pb-0 overflow-hidden">
       {/* SECTION HEADER */}
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-        <span style={{ color: fabniquoGold }} className="text-xs font-bold tracking-[0.4em] uppercase mb-4 block animate-pulse">
+        <span style={{ color: fabniquoGold }} className="text-xs text-[14px] font-bold tracking-[0.2em] uppercase mb-4 block animate-pulse">
           Featured Labels
         </span>
-        <h2 className="text-4xl md:text-5xl font-serif text-gray-900 mb-4">The Artisans of Fabniquo</h2>
+        <h2 className="text-4xl md:text-5xl  text-gray-900 mb-4 font-light">The Artisans of Fabniquo</h2>
         <p className="text-gray-500 font-light max-w-xl mx-auto">
           Discover the soul of Indian craftsmanship through our handpicked selection of niche luxury brands.
         </p>
       </div>
 
+
       {/* INFINITE LOGO MARQUEE */}
-      <div className="relative flex overflow-x-hidden border-y border-gray-100 py-10 mb-20">
+      {/* <div className="relative flex overflow-x-hidden border-y border-gray-100 py-10 mb-20">
         <div className="animate-marquee flex whitespace-nowrap items-center">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex items-center">
               {brands.map((brand, idx) => (
                 <span key={idx} className="mx-12 text-3xl md:text-4xl font-serif text-gray-300 hover:text-[#D1A743] transition-colors cursor-default uppercase tracking-widest">
                   {brand.name}
+                   
                 </span>
               ))}
             </div>
           ))}
         </div>
+      </div> */}
+
+      <div className="relative flex overflow-x-hidden border-y border-gray-100 py-10 mb-20">
+  <div className="animate-marquee flex whitespace-nowrap items-center">
+    {[...Array(2)].map((_, i) => (
+      <div key={i} className="flex items-center">
+        {brands.map((brand, idx) => (
+       <span className="mx-12 w-[350px] h-[80px] flex items-center justify-center overflow-hidden">
+  <img
+    src={brand.logo}
+    alt="brand logo"
+    className="w-full h-full object-cover"
+  />
+</span>
+
+        ))}
       </div>
+    ))}
+  </div>
+</div>
+
 
       {/* BRAND STORY CARDS */}
       <div className="max-w-7xl mx-auto px-6 mb-32"> {/* Added margin bottom for spacing before the curve */}
@@ -59,6 +82,7 @@ const BrandShowcase = () => {
                 {brand.desc}
               </p>
               
+             
               <button 
                 style={{ borderColor: 'transparent' }} 
                 className="text-xs font-bold uppercase tracking-widest border-b border-black pb-1 hover:border-[#D1A743] hover:text-[#D1A743] transition-all"

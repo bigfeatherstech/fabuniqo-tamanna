@@ -7,18 +7,22 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'playfair': ['"Playfair Display"', 'serif'],
-        'poppins': ['Poppins', 'sans-serif'],
-        'Noto':["Noto Serif", 'serif']
+        // 'sans': ['Roboto Flex', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+    
+
+        sans: ["Roboto Flex", "system-ui", "sans-serif"],
+       display: ["Orbitron", "sans-serif"],
+       serif: ["Noto Serif", "serif"],
+        
       },
       colors: {
-        'primary': '#FF3F6C', // Nykaa's pink
-        'secondary': '#0F0F0F', // Dark text
+     
+        'secondary': '#0F0F0F', 
         'accent': '#FFD700', // Gold accent
         'fab-gold': '#d1a743', // Your brand gold
         'fab-dark': '#0e0e0e',
-        'nykaa-pink': '#FF3F6C',
-        'nykaa-dark': '#1A1A1A',
+      
+       
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',
