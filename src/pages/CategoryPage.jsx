@@ -1,274 +1,201 @@
+
 // import React, { useState } from "react";
-// import { Heart } from "lucide-react";
+
+// const products = [
+//   { id: 1, name: "Diamond Ring", price: 14200, type: "Rings", discount: 10, img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a" },
+//   { id: 2, name: "Gold Earrings", price: 6012, type: "Earrings", discount: 20, img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1" },
+//   { id: 3, name: "Gold Pendant", price: 6147, type: "Pendants", discount: 5, img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1" },
+//   { id: 4, name: "Necklace Set", price: 11200, type: "Necklaces", discount: 15, img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a" },
+//     { id: 5, name: "Necklace Set", price: 11200, type: "Necklaces", discount: 15, img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a" },
+
+//       { id: 6, name: "Necklace Set", price: 11200, type: "Necklaces", discount: 15, img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a" },
+//   { id: 7, name: "Gold Pendant", price: 6147, type: "Pendants", discount: 5, img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1" },
+//   { id: 8, name: "Gold Pendant", price: 6147, type: "Pendants", discount: 5, img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1" },
+
+// ];
 
 // const CategoryPage = () => {
 
-//   const products = [
-//     {
-//       id: 1,
-//       name: "Diamond Swirl Ring",
-//       type: "Rings",
-//       price: 14420,
-//       oldPrice: 18000,
-//       discount: 20,
-//       image:
-//         "https://images.unsplash.com/photo-1605100804763-247f67b3557e"
-//     },
-//     {
-//       id: 2,
-//       name: "Music Notes Earrings",
-//       type: "Earrings",
-//       price: 6012,
-//       oldPrice: 9000,
-//       discount: 30,
-//       image:
-//         "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"
-//     },
-//     {
-//       id: 3,
-//       name: "Gold Stud Earrings",
-//       type: "Earrings",
-//       price: 6512,
-//       oldPrice: 8500,
-//       discount: 25,
-//       image:
-//         "https://images.unsplash.com/photo-1617038220319-276d3cfab638"
-//     },
-//     {
-//       id: 4,
-//       name: "Radiant Diamond Ring",
-//       type: "Rings",
-//       price: 16486,
-//       oldPrice: 20000,
-//       discount: 18,
-//       image:
-//         "https://images.unsplash.com/photo-1603561596112-d34f8f7b1c36"
-//     },
-//     {
-//       id: 5,
-//       name: "Triangle Pendant Necklace",
-//       type: "Necklace",
-//       price: 6147,
-//       oldPrice: 8458,
-//       discount: 27,
-//       image:
-//         "https://images.unsplash.com/photo-1611591437281-460bfbe1220a"
-//     },
-//     {
-//       id: 6,
-//       name: "V Gold Necklace",
-//       type: "Necklace",
-//       price: 9500,
-//       oldPrice: 12000,
-//       discount: 20,
-//       image:
-//         "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1"
-//     }
-//   ];
+//   const [selectedType, setSelectedType] = useState([]);
+//   const [selectedPrice, setSelectedPrice] = useState(null);
+//   const [selectedDiscount, setSelectedDiscount] = useState(null);
+//   const [activeTopFilter, setActiveTopFilter] = useState("All");
 
-//   const [selectedType, setSelectedType] = useState("");
-//   const [selectedPrice, setSelectedPrice] = useState("");
-//   const [selectedDiscount, setSelectedDiscount] = useState("");
+//   const clearFilters = () => {
+//     setSelectedType([]);
+//     setSelectedPrice(null);
+//     setSelectedDiscount(null);
+//     setActiveTopFilter("All");
+//   };
+
+//   const handleTypeChange = (type) => {
+//     if (selectedType.includes(type)) {
+//       setSelectedType(selectedType.filter((t) => t !== type));
+//     } else {
+//       setSelectedType([...selectedType, type]);
+//     }
+//   };
 
 //   const filteredProducts = products.filter((p) => {
 
-//     const typeMatch = selectedType ? p.type === selectedType : true;
+//     if (selectedType.length && !selectedType.includes(p.type)) return false;
 
-//     const priceMatch =
-//       selectedPrice === "under5000"
-//         ? p.price < 5000
-//         : selectedPrice === "5000to10000"
-//         ? p.price >= 5000 && p.price <= 10000
-//         : selectedPrice === "above10000"
-//         ? p.price > 10000
-//         : true;
+//     if (selectedPrice === "under5k" && p.price > 5000) return false;
+//     if (selectedPrice === "5k10k" && (p.price < 5000 || p.price > 10000)) return false;
+//     if (selectedPrice === "10k20k" && (p.price < 10000 || p.price > 20000)) return false;
 
-//     const discountMatch =
-//       selectedDiscount === "10"
-//         ? p.discount >= 10
-//         : selectedDiscount === "20"
-//         ? p.discount >= 20
-//         : selectedDiscount === "30"
-//         ? p.discount >= 30
-//         : true;
+//     if (selectedDiscount && p.discount < selectedDiscount) return false;
 
-//     return typeMatch && priceMatch && discountMatch;
+//     return true;
 //   });
 
 //   return (
-//     <section className="bg-[#fafafa] py-10 font-main">
+//     <div className="max-w-[1400px] mx-auto px-4 py-8 bg-white">
 
-//       <div className="max-w-7xl mx-auto px-6 grid grid-cols-12 gap-10">
+//       {/* TOP FILTER BUTTONS */}
 
-//         {/* FILTERS */}
+//       <div className="flex flex-wrap gap-3 mb-6">
+//         {["All", "Fast Delivery", "Latest Designs", "Store Pickup", "Try at Home"].map((item) => (
+//           <button
+//             key={item}
+//             onClick={() => setActiveTopFilter(item)}
+//             className={`px-4 py-2 rounded-full border text-sm transition 
+//               ${activeTopFilter === item 
+//               ? "bg-[#D1A743] text-white border-[#D1A743]" 
+//               : "bg-white text-gray-700 hover:border-[#D1A743]"}`}
+//           >
+//             {item}
+//           </button>
+//         ))}
+//       </div>
 
-//         <div className="col-span-3 hidden lg:block">
+//       <div className="flex gap-8">
 
-//           <h3 className="text-sm font-semibold mb-6 tracking-wide">
-//             FILTERS
-//           </h3>
+//         {/* SIDEBAR FILTERS */}
 
-//           {/* PRODUCT TYPE */}
+//         <div className="w-[260px] hidden lg:block">
 
-//           <div className="mb-8">
+//           <div className="flex justify-between mb-4">
+//             <h3 className="font-semibold text-gray-700">FILTERS</h3>
 
-//             <h4 className="font-medium mb-3 text-zinc-800">
-//               Product Type
-//             </h4>
-
-//             {["Rings", "Earrings", "Necklace"].map((type) => (
-
-//               <label
-//                 key={type}
-//                 className="flex items-center gap-2 mb-2 text-sm text-zinc-600 cursor-pointer"
-//               >
-
-//                 <input
-//                   type="radio"
-//                   name="type"
-//                   onChange={() => setSelectedType(type)}
-//                 />
-
-//                 {type}
-
-//               </label>
-
-//             ))}
+//             <button
+//               onClick={clearFilters}
+//               className="text-sm text-pink-500 hover:underline"
+//             >
+//               CLEAR ALL
+//             </button>
 //           </div>
 
-//           {/* PRICE */}
+//           {/* PRICE FILTER */}
 
 //           <div className="mb-8">
+//             <h4 className="font-medium mb-3">Price</h4>
 
-//             <h4 className="font-medium mb-3 text-zinc-800">
-//               Price
-//             </h4>
-
-//             <label className="block text-sm mb-2 text-zinc-600">
+//             <label className="block mb-2">
 //               <input
 //                 type="radio"
 //                 name="price"
-//                 onChange={() => setSelectedPrice("under5000")}
+//                 onChange={() => setSelectedPrice("under5k")}
 //               />{" "}
 //               Under ₹5,000
 //             </label>
 
-//             <label className="block text-sm mb-2 text-zinc-600">
+//             <label className="block mb-2">
 //               <input
 //                 type="radio"
 //                 name="price"
-//                 onChange={() => setSelectedPrice("5000to10000")}
+//                 onChange={() => setSelectedPrice("5k10k")}
 //               />{" "}
 //               ₹5,000 - ₹10,000
 //             </label>
 
-//             <label className="block text-sm text-zinc-600">
+//             <label className="block mb-2">
 //               <input
 //                 type="radio"
 //                 name="price"
-//                 onChange={() => setSelectedPrice("above10000")}
+//                 onChange={() => setSelectedPrice("10k20k")}
 //               />{" "}
-//               Above ₹10,000
+//               ₹10,000 - ₹20,000
 //             </label>
+//           </div>
 
+//           {/* PRODUCT TYPE */}
+
+//           <div className="mb-8">
+//             <h4 className="font-medium mb-3">Product Type</h4>
+
+//             {["Rings", "Earrings", "Necklaces", "Pendants"].map((type) => (
+//               <label key={type} className="block mb-2">
+
+//                 <input
+//                   type="checkbox"
+//                   checked={selectedType.includes(type)}
+//                   onChange={() => handleTypeChange(type)}
+//                 />
+
+//                 <span className="ml-2">{type}</span>
+
+//               </label>
+//             ))}
 //           </div>
 
 //           {/* DISCOUNT */}
 
 //           <div>
+//             <h4 className="font-medium mb-3">Discounts</h4>
 
-//             <h4 className="font-medium mb-3 text-zinc-800">
-//               Discount
-//             </h4>
-
-//             <label className="block text-sm mb-2 text-zinc-600">
-//               <input
-//                 type="radio"
-//                 name="discount"
-//                 onChange={() => setSelectedDiscount("10")}
-//               />{" "}
-//               10% or more
+//             <label className="block mb-2">
+//               <input type="radio" name="discount" onChange={() => setSelectedDiscount(10)} />
+//               <span className="ml-2">10% or more</span>
 //             </label>
 
-//             <label className="block text-sm mb-2 text-zinc-600">
-//               <input
-//                 type="radio"
-//                 name="discount"
-//                 onChange={() => setSelectedDiscount("20")}
-//               />{" "}
-//               20% or more
-//             </label>
-
-//             <label className="block text-sm text-zinc-600">
-//               <input
-//                 type="radio"
-//                 name="discount"
-//                 onChange={() => setSelectedDiscount("30")}
-//               />{" "}
-//               30% or more
+//             <label className="block mb-2">
+//               <input type="radio" name="discount" onChange={() => setSelectedDiscount(20)} />
+//               <span className="ml-2">20% or more</span>
 //             </label>
 
 //           </div>
 
 //         </div>
 
-//         {/* PRODUCT GRID */}
+//         {/* PRODUCTS */}
 
-//         <div className="col-span-12 lg:col-span-9">
+//         <div className="flex-1">
 
-//           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+//           {/* SORT */}
+
+//           <div className="flex justify-end mb-6">
+
+//             <select className="border rounded-md px-3 py-2 text-sm">
+//               <option>Sort By: Featured</option>
+//               <option>Price Low → High</option>
+//               <option>Price High → Low</option>
+//             </select>
+
+//           </div>
+
+//           {/* PRODUCT GRID */}
+
+//           <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
 
 //             {filteredProducts.map((product) => (
 
 //               <div
 //                 key={product.id}
-//                 className="group bg-white p-4 border hover:shadow-md transition"
+//                 className="border rounded-xl p-4 hover:shadow-lg transition"
 //               >
 
-//                 {/* IMAGE */}
+//                 <img
+//                   src={product.img}
+//                   alt={product.name}
+//                   className="w-full h-[220px] object-contain"
+//                 />
 
-//                 <div className="relative">
+//                 <h3 className="mt-3 font-medium">{product.name}</h3>
 
-//                   <img
-//                     src={product.image}
-//                     className="w-full h-60 object-contain group-hover:scale-105 transition"
-//                   />
-
-//                   <button className="absolute top-2 right-2 bg-white p-2 rounded-full shadow">
-//                     <Heart size={16} />
-//                   </button>
-
-//                 </div>
-
-//                 {/* INFO */}
-
-//                 <div className="mt-4 space-y-1">
-
-//                   <p className="text-sm text-zinc-800">
-//                     {product.name}
-//                   </p>
-
-//                   <div className="flex items-center gap-2 text-sm">
-
-//                     <span className="font-semibold text-black">
-//                       ₹{product.price}
-//                     </span>
-
-//                     <span className="line-through text-gray-400 text-xs">
-//                       ₹{product.oldPrice}
-//                     </span>
-
-//                     <span className="text-[rgb(209,167,67)] text-xs font-medium">
-//                       {product.discount}% OFF
-//                     </span>
-
-//                   </div>
-
-//                   <p className="text-xs text-[rgb(209,167,67)]">
-//                     Check Delivery Date
-//                   </p>
-
-//                 </div>
+//                 <p className="text-[#D1A743] font-semibold">
+//                   ₹{product.price.toLocaleString()}
+//                 </p>
 
 //               </div>
 
@@ -280,7 +207,7 @@
 
 //       </div>
 
-//     </section>
+//     </div>
 //   );
 // };
 
@@ -299,70 +226,483 @@
 
 
 
+import React, { useState, useEffect } from "react";
+
+
+import Rssred  from "../assets/Rset-red (2).png"
+import Rss203 from "../assets/Rss - 203 (4).png"
+import Rss203a from "../assets/Rss - 203 (1).png";
+import Rss203b from "../assets/Rss - 203 (2).png";
+import Rss203c from "../assets/Rss - 203 (3).png";
+import Rss203d from "../assets/Rss - 203 (5).png";
+import Rss201 from "../assets/Rss -201 (3).png"
+import Rss201A from "../assets/Rss -201 (4).png"
+import Rss204 from "../assets/Rss-204 (2).png"
+import Rss205 from "../assets/Rss-205 (3).png"
+import Rss206 from "../assets/Rss-206  (2).png"
+import Rss222 from "../assets/Rss-222 (1).png"
+import Rss225 from "../assets/Rss-225-gold (1).png"
+import Rss225S from "../assets/Rss-225-silver (1).png"
+import vjs230 from "../assets/vjs-231-rosegold (1).png"
+import vjs231 from "../assets/vjs-231-silverWhite (3).png"
+import Egur158 from "../assets/Egur 158 Red (3).png"
+import Egur159 from "../assets/Egur-159-Green (1).png"
+// import vjs231 from "../../assets/vjs-231-silverWhite (3).png"
+import vjs230d from "../assets/vjs-230 (5).png"
 
 
 
-import React, { useState } from "react";
 
-const products = [
-  { id: 1, name: "Diamond Ring", price: 14200, type: "Rings", discount: 10, img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a" },
-  { id: 2, name: "Gold Earrings", price: 6012, type: "Earrings", discount: 20, img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1" },
-  { id: 3, name: "Gold Pendant", price: 6147, type: "Pendants", discount: 5, img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1" },
-  { id: 4, name: "Necklace Set", price: 11200, type: "Necklaces", discount: 15, img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a" },
-    { id: 5, name: "Necklace Set", price: 11200, type: "Necklaces", discount: 15, img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a" },
-
-      { id: 6, name: "Necklace Set", price: 11200, type: "Necklaces", discount: 15, img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a" },
-  { id: 7, name: "Gold Pendant", price: 6147, type: "Pendants", discount: 5, img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1" },
-  { id: 8, name: "Gold Pendant", price: 6147, type: "Pendants", discount: 5, img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1" },
-
+// This would be replaced with API data later
+const initialProducts = [
+  { 
+    id: 1, 
+    name: "Diamond Ring", 
+    price: 14200, 
+    type: "Rings", 
+    discount: 10, 
+    // img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a",
+    img:Rss203,
+    material: "platinum",
+    occasion: "party",
+    weight: 2.5,
+    rating: 4.5,
+    inStock: true
+  },
+  { 
+    id: 2, 
+    name: "Gold Earrings", 
+    price: 6012, 
+    type: "Earrings", 
+    discount: 20, 
+    // img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1",
+    img:Rss201A,
+    material: "gold",
+    occasion: "festival",
+    weight: 3.2,
+    rating: 4.2,
+    inStock: true
+  },
+  { 
+    id: 3, 
+    name: "Gold Pendant", 
+    price: 6147, 
+    type: "Pendants", 
+    discount: 5, 
+    // img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1",
+    img:Rss204,
+    material: "gold",
+    occasion: "office",
+    weight: 1.8,
+    rating: 4.0,
+    inStock: true
+  },
+  { 
+    id: 4, 
+    name: "Necklace Set", 
+    price: 11200, 
+    type: "Necklaces", 
+    discount: 15, 
+    // img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a",
+    img:Rss205,
+    material: "silver",
+    occasion: "wedding",
+    weight: 4.5,
+    rating: 4.8,
+    inStock: true
+  },
+  { 
+    id: 5, 
+    name: "Platinum Ring", 
+    price: 22500, 
+    type: "Rings", 
+    discount: 12, 
+    // img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a",
+    img:vjs231,
+    material: "platinum",
+    occasion: "engagement",
+    weight: 3.8,
+    rating: 4.9,
+    inStock: true
+  },
+  { 
+    id: 6, 
+    name: "Silver Earrings", 
+    price: 3500, 
+    type: "Earrings", 
+    discount: 25, 
+    // img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1",
+    img:vjs230,
+    material: "silver",
+    occasion: "everyday",
+    weight: 1.2,
+    rating: 4.3,
+    inStock: true
+  },
+  { 
+    id: 7, 
+    name: "Gold Necklace", 
+    price: 18400, 
+    type: "Necklaces", 
+    discount: 8, 
+    // img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a",
+    img:Rss222,
+    material: "gold",
+    occasion: "festival",
+    weight: 6.2,
+    rating: 4.6,
+    inStock: true
+  },
+  { 
+    id: 8, 
+    name: "Diamond Pendant", 
+    price: 8950, 
+    type: "Pendants", 
+    discount: 15, 
+    // img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1",
+    img:Egur158,
+    material: "platinum",
+    occasion: "party",
+    weight: 1.5,
+    rating: 4.4,
+    inStock: true
+  },
+  { 
+    id: 9, 
+    name: "Office Wear Set", 
+    price: 7500, 
+    type: "Sets", 
+    discount: 10, 
+    // img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a",
+    img:Rss206,
+    material: "silver",
+    occasion: "office",
+    weight: 3.0,
+    rating: 4.1,
+    inStock: true
+  },
+  { 
+    id: 10, 
+    name: "Party Wear Earrings", 
+    price: 4200, 
+    type: "Earrings", 
+    discount: 18, 
+    // img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1",
+    img:Rss225,
+    material: "gold",
+    occasion: "party",
+    weight: 2.2,
+    rating: 4.7,
+    inStock: true
+  },
+  { 
+    id: 11, 
+    name: "Wedding Necklace", 
+    price: 28500, 
+    type: "Necklaces", 
+    discount: 20, 
+    // img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a",
+    img:Egur159,
+    material: "gold",
+    occasion: "wedding",
+    weight: 8.5,
+    rating: 4.9,
+    inStock: true
+  },
+  { 
+    id: 12, 
+    name: "Festival Special Set", 
+    price: 12400, 
+    type: "Sets", 
+    discount: 22, 
+    // img: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1",
+    img:vjs230d,
+    material: "silver",
+    occasion: "festival",
+    weight: 5.2,
+    rating: 4.5,
+    inStock: true
+  },
 ];
 
-const CategoryPage = () => {
+// Filter configurations - easy to modify and extend
+const FILTER_CONFIG = {
+  material: {
+    title: "Material Type",
+    options: [
+      { value: "gold", label: "Gold" },
+      { value: "silver", label: "Silver" },
+      { value: "platinum", label: "Platinum" },
+      { value: "diamond", label: "Diamond" }
+    ]
+  },
+  occasion: {
+    title: "Occasion",
+    options: [
+      { value: "everyday", label: "Everyday Wear" },
+      { value: "office", label: "Office" },
+      { value: "party", label: "Party" },
+      { value: "festival", label: "Festival" },
+      { value: "wedding", label: "Wedding" },
+      { value: "engagement", label: "Engagement" }
+    ]
+  },
+  weight: {
+    title: "Weight",
+    options: [
+      { value: "0-2", label: "0 - 2 g", min: 0, max: 2 },
+      { value: "2-5", label: "2 - 5 g", min: 2, max: 5 },
+      { value: "5-10", label: "5 - 10 g", min: 5, max: 10 },
+      { value: "10+", label: "10 g & above", min: 10, max: Infinity }
+    ]
+  },
+  type: {
+    title: "Product Type",
+    options: [
+      { value: "Rings", label: "Rings" },
+      { value: "Earrings", label: "Earrings" },
+      { value: "Necklaces", label: "Necklaces" },
+      { value: "Pendants", label: "Pendants" },
+      { value: "Sets", label: "Sets" }
+    ]
+  },
+  price: {
+    title: "Price Range",
+    options: [
+      { value: "under5k", label: "Under ₹5,000", min: 0, max: 5000 },
+      { value: "5k10k", label: "₹5,000 - ₹10,000", min: 5000, max: 10000 },
+      { value: "10k20k", label: "₹10,000 - ₹20,000", min: 10000, max: 20000 },
+      { value: "20k50k", label: "₹20,000 - ₹50,000", min: 20000, max: 50000 },
+      { value: "50k+", label: "₹50,000 & above", min: 50000, max: Infinity }
+    ]
+  },
+  discount: {
+    title: "Discount",
+    options: [
+      { value: 10, label: "10% or more" },
+      { value: 20, label: "20% or more" },
+      { value: 30, label: "30% or more" },
+      { value: 40, label: "40% or more" },
+      { value: 50, label: "50% or more" }
+    ]
+  },
+  rating: {
+    title: "Customer Rating",
+    options: [
+      { value: 4, label: "4★ & above" },
+      { value: 3, label: "3★ & above" },
+      { value: 2, label: "2★ & above" }
+    ]
+  }
+};
 
-  const [selectedType, setSelectedType] = useState([]);
+const CategoryPage = () => {
+  // State for products and loading
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Filter states
+  const [selectedTypes, setSelectedTypes] = useState([]);
+  const [selectedMaterials, setSelectedMaterials] = useState([]);
+  const [selectedOccasions, setSelectedOccasions] = useState([]);
+  const [selectedWeight, setSelectedWeight] = useState(null);
   const [selectedPrice, setSelectedPrice] = useState(null);
   const [selectedDiscount, setSelectedDiscount] = useState(null);
+  const [selectedRating, setSelectedRating] = useState(null);
   const [activeTopFilter, setActiveTopFilter] = useState("All");
+  
+  // Sorting state
+  const [sortBy, setSortBy] = useState("featured");
+  
+  // Mobile filter visibility
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
+  // Simulate API fetch
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setLoading(true);
+      try {
+        // Simulate API call
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setProducts(initialProducts);
+        setError(null);
+      } catch (err) {
+        setError("Failed to load products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  // Clear all filters
   const clearFilters = () => {
-    setSelectedType([]);
+    setSelectedTypes([]);
+    setSelectedMaterials([]);
+    setSelectedOccasions([]);
+    setSelectedWeight(null);
     setSelectedPrice(null);
     setSelectedDiscount(null);
+    setSelectedRating(null);
     setActiveTopFilter("All");
+    setSortBy("featured");
   };
 
-  const handleTypeChange = (type) => {
-    if (selectedType.includes(type)) {
-      setSelectedType(selectedType.filter((t) => t !== type));
+  // Check if any filter is active
+  const hasActiveFilters = () => {
+    return selectedTypes.length > 0 ||
+      selectedMaterials.length > 0 ||
+      selectedOccasions.length > 0 ||
+      selectedWeight !== null ||
+      selectedPrice !== null ||
+      selectedDiscount !== null ||
+      selectedRating !== null ||
+      activeTopFilter !== "All";
+  };
+
+  // Generic checkbox handler
+  const handleCheckboxChange = (value, selectedArray, setSelectedArray) => {
+    if (selectedArray.includes(value)) {
+      setSelectedArray(selectedArray.filter(item => item !== value));
     } else {
-      setSelectedType([...selectedType, type]);
+      setSelectedArray([...selectedArray, value]);
     }
   };
 
+  // Filter products based on all criteria
   const filteredProducts = products.filter((p) => {
+    // Product type filter
+    if (selectedTypes.length && !selectedTypes.includes(p.type)) return false;
 
-    if (selectedType.length && !selectedType.includes(p.type)) return false;
+    // Material filter
+    if (selectedMaterials.length && !selectedMaterials.includes(p.material)) return false;
 
-    if (selectedPrice === "under5k" && p.price > 5000) return false;
-    if (selectedPrice === "5k10k" && (p.price < 5000 || p.price > 10000)) return false;
-    if (selectedPrice === "10k20k" && (p.price < 10000 || p.price > 20000)) return false;
+    // Occasion filter
+    if (selectedOccasions.length && !selectedOccasions.includes(p.occasion)) return false;
 
+    // Weight filter
+    if (selectedWeight) {
+      const weightOption = FILTER_CONFIG.weight.options.find(opt => opt.value === selectedWeight);
+      if (weightOption && (p.weight < weightOption.min || p.weight > weightOption.max)) return false;
+    }
+
+    // Price filter
+    if (selectedPrice) {
+      const priceOption = FILTER_CONFIG.price.options.find(opt => opt.value === selectedPrice);
+      if (priceOption && (p.price < priceOption.min || p.price > priceOption.max)) return false;
+    }
+
+    // Discount filter
     if (selectedDiscount && p.discount < selectedDiscount) return false;
+
+    // Rating filter
+    if (selectedRating && p.rating < selectedRating) return false;
+
+    // Top filters
+    if (activeTopFilter === "Fast Delivery" && p.id % 2 !== 0) return false; // Example logic
+    if (activeTopFilter === "Latest Designs" && p.id > 8) return false; // Example logic
 
     return true;
   });
 
+  // Sort products
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    switch(sortBy) {
+      case "price-low":
+        return a.price - b.price;
+      case "price-high":
+        return b.price - a.price;
+      case "rating":
+        return b.rating - a.rating;
+      case "discount":
+        return b.discount - a.discount;
+      default:
+        return a.id - b.id; // Featured (default)
+    }
+  });
+
+  // Count active filters
+  const getActiveFilterCount = () => {
+    let count = 0;
+    if (selectedTypes.length) count += selectedTypes.length;
+    if (selectedMaterials.length) count += selectedMaterials.length;
+    if (selectedOccasions.length) count += selectedOccasions.length;
+    if (selectedWeight) count += 1;
+    if (selectedPrice) count += 1;
+    if (selectedDiscount) count += 1;
+    if (selectedRating) count += 1;
+    if (activeTopFilter !== "All") count += 1;
+    return count;
+  };
+
+  if (loading) {
+    return (
+      <div className="max-w-[1400px] mx-auto px-4 py-8">
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#D1A743]"></div>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="max-w-[1400px] mx-auto px-4 py-8">
+        <div className="text-center text-red-600">
+          <p>{error}</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="mt-4 bg-[#D1A743] text-white px-4 py-2 rounded"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="max-w-[1400px] mx-auto px-4 py-8">
+      {/* Active Filters Summary */}
+      {hasActiveFilters() && (
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <span className="text-sm text-gray-600">Active Filters:</span>
+          {selectedTypes.map(type => (
+            <span key={type} className="bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+              {type}
+              <button onClick={() => handleCheckboxChange(type, selectedTypes, setSelectedTypes)} className="ml-1 text-gray-500 hover:text-red-500">×</button>
+            </span>
+          ))}
+          {selectedMaterials.map(material => (
+            <span key={material} className="bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+              {material.charAt(0).toUpperCase() + material.slice(1)}
+              <button onClick={() => handleCheckboxChange(material, selectedMaterials, setSelectedMaterials)} className="ml-1 text-gray-500 hover:text-red-500">×</button>
+            </span>
+          ))}
+          {activeTopFilter !== "All" && (
+            <span className="bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center gap-1">
+              {activeTopFilter}
+              <button onClick={() => setActiveTopFilter("All")} className="ml-1 text-gray-500 hover:text-red-500">×</button>
+            </span>
+          )}
+          <button 
+            onClick={clearFilters}
+            className="text-sm text-[#D1A743] hover:underline ml-2"
+          >
+            Clear All
+          </button>
+        </div>
+      )}
 
       {/* TOP FILTER BUTTONS */}
-
       <div className="flex flex-wrap gap-3 mb-6">
-        {["All", "Fast Delivery", "Latest Designs", "Store Pickup", "Try at Home"].map((item) => (
+        {["All", "Fast Delivery", "Latest Designs", "Store Pickup", "Try at Home", "Best Sellers", "New Arrivals"].map((item) => (
           <button
             key={item}
             onClick={() => setActiveTopFilter(item)}
-            className={`px-4 py-2 rounded-full border text-sm transition 
+            className={`px-4 py-2 rounded-full border text-sm transition whitespace-nowrap
               ${activeTopFilter === item 
               ? "bg-[#D1A743] text-white border-[#D1A743]" 
               : "bg-white text-gray-700 hover:border-[#D1A743]"}`}
@@ -372,144 +712,239 @@ const CategoryPage = () => {
         ))}
       </div>
 
-      <div className="flex gap-8">
-
-        {/* SIDEBAR FILTERS */}
-
-        <div className="w-[260px] hidden lg:block">
-
-          <div className="flex justify-between mb-4">
-            <h3 className="font-semibold text-gray-700">FILTERS</h3>
-
-            <button
-              onClick={clearFilters}
-              className="text-sm text-pink-500 hover:underline"
-            >
-              CLEAR ALL
-            </button>
-          </div>
-
-          {/* PRICE FILTER */}
-
-          <div className="mb-8">
-            <h4 className="font-medium mb-3">Price</h4>
-
-            <label className="block mb-2">
-              <input
-                type="radio"
-                name="price"
-                onChange={() => setSelectedPrice("under5k")}
-              />{" "}
-              Under ₹5,000
-            </label>
-
-            <label className="block mb-2">
-              <input
-                type="radio"
-                name="price"
-                onChange={() => setSelectedPrice("5k10k")}
-              />{" "}
-              ₹5,000 - ₹10,000
-            </label>
-
-            <label className="block mb-2">
-              <input
-                type="radio"
-                name="price"
-                onChange={() => setSelectedPrice("10k20k")}
-              />{" "}
-              ₹10,000 - ₹20,000
-            </label>
-          </div>
-
-          {/* PRODUCT TYPE */}
-
-          <div className="mb-8">
-            <h4 className="font-medium mb-3">Product Type</h4>
-
-            {["Rings", "Earrings", "Necklaces", "Pendants"].map((type) => (
-              <label key={type} className="block mb-2">
-
-                <input
-                  type="checkbox"
-                  checked={selectedType.includes(type)}
-                  onChange={() => handleTypeChange(type)}
-                />
-
-                <span className="ml-2">{type}</span>
-
-              </label>
-            ))}
-          </div>
-
-          {/* DISCOUNT */}
-
-          <div>
-            <h4 className="font-medium mb-3">Discounts</h4>
-
-            <label className="block mb-2">
-              <input type="radio" name="discount" onChange={() => setSelectedDiscount(10)} />
-              <span className="ml-2">10% or more</span>
-            </label>
-
-            <label className="block mb-2">
-              <input type="radio" name="discount" onChange={() => setSelectedDiscount(20)} />
-              <span className="ml-2">20% or more</span>
-            </label>
-
-          </div>
-
-        </div>
-
-        {/* PRODUCTS */}
-
-        <div className="flex-1">
-
-          {/* SORT */}
-
-          <div className="flex justify-end mb-6">
-
-            <select className="border rounded-md px-3 py-2 text-sm">
-              <option>Sort By: Featured</option>
-              <option>Price Low → High</option>
-              <option>Price High → Low</option>
-            </select>
-
-          </div>
-
-          {/* PRODUCT GRID */}
-
-          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
-
-            {filteredProducts.map((product) => (
-
-              <div
-                key={product.id}
-                className="border rounded-xl p-4 hover:shadow-lg transition"
-              >
-
-                <img
-                  src={product.img}
-                  alt={product.name}
-                  className="w-full h-[220px] object-contain"
-                />
-
-                <h3 className="mt-3 font-medium">{product.name}</h3>
-
-                <p className="text-[#D1A743] font-semibold">
-                  ₹{product.price.toLocaleString()}
-                </p>
-
-              </div>
-
-            ))}
-
-          </div>
-
-        </div>
-
+      {/* Mobile Filter Button */}
+      <div className="lg:hidden mb-4">
+        <button
+          onClick={() => setShowMobileFilters(!showMobileFilters)}
+          className="w-full bg-white border rounded-lg px-4 py-3 flex items-center justify-between"
+        >
+          <span className="font-medium">Filters {getActiveFilterCount() > 0 && `(${getActiveFilterCount()})`}</span>
+          <span>{showMobileFilters ? '▲' : '▼'}</span>
+        </button>
       </div>
 
+      <div className="flex gap-8">
+        {/* SIDEBAR FILTERS */}
+        <div className={`${showMobileFilters ? 'block' : 'hidden'} lg:block w-full lg:w-[280px]`}>
+          <div className="bg-white p-6 rounded-lg border sticky top-4">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="font-semibold text-lg">FILTERS</h3>
+              <button
+                onClick={clearFilters}
+                className="text-sm text-[#D1A743] hover:underline"
+              >
+                CLEAR ALL {getActiveFilterCount() > 0 && `(${getActiveFilterCount()})`}
+              </button>
+            </div>
+
+            {/* Material Type Filter */}
+            <div className="mb-6 border-b pb-6">
+              <h4 className="font-medium mb-3">{FILTER_CONFIG.material.title}</h4>
+              {FILTER_CONFIG.material.options.map((option) => (
+                <label key={option.value} className="flex items-center mb-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={selectedMaterials.includes(option.value)}
+                    onChange={() => handleCheckboxChange(option.value, selectedMaterials, setSelectedMaterials)}
+                    className="w-4 h-4 text-[#D1A743] rounded border-gray-300 focus:ring-[#D1A743]"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">{option.label}</span>
+                </label>
+              ))}
+            </div>
+
+            {/* Occasion Filter */}
+            <div className="mb-6 border-b pb-6">
+              <h4 className="font-medium mb-3">{FILTER_CONFIG.occasion.title}</h4>
+              {FILTER_CONFIG.occasion.options.map((option) => (
+                <label key={option.value} className="flex items-center mb-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={selectedOccasions.includes(option.value)}
+                    onChange={() => handleCheckboxChange(option.value, selectedOccasions, setSelectedOccasions)}
+                    className="w-4 h-4 text-[#D1A743] rounded border-gray-300 focus:ring-[#D1A743]"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">{option.label}</span>
+                </label>
+              ))}
+            </div>
+
+            {/* Product Type Filter */}
+            <div className="mb-6 border-b pb-6">
+              <h4 className="font-medium mb-3">{FILTER_CONFIG.type.title}</h4>
+              {FILTER_CONFIG.type.options.map((option) => (
+                <label key={option.value} className="flex items-center mb-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={selectedTypes.includes(option.value)}
+                    onChange={() => handleCheckboxChange(option.value, selectedTypes, setSelectedTypes)}
+                    className="w-4 h-4 text-[#D1A743] rounded border-gray-300 focus:ring-[#D1A743]"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">{option.label}</span>
+                </label>
+              ))}
+            </div>
+
+            {/* Weight Filter */}
+            <div className="mb-6 border-b pb-6">
+              <h4 className="font-medium mb-3">{FILTER_CONFIG.weight.title}</h4>
+              {FILTER_CONFIG.weight.options.map((option) => (
+                <label key={option.value} className="flex items-center mb-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="weight"
+                    checked={selectedWeight === option.value}
+                    onChange={() => setSelectedWeight(option.value)}
+                    className="w-4 h-4 text-[#D1A743] border-gray-300 focus:ring-[#D1A743]"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">{option.label}</span>
+                </label>
+              ))}
+            </div>
+
+            {/* Price Filter */}
+            <div className="mb-6 border-b pb-6">
+              <h4 className="font-medium mb-3">{FILTER_CONFIG.price.title}</h4>
+              {FILTER_CONFIG.price.options.map((option) => (
+                <label key={option.value} className="flex items-center mb-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="price"
+                    checked={selectedPrice === option.value}
+                    onChange={() => setSelectedPrice(option.value)}
+                    className="w-4 h-4 text-[#D1A743] border-gray-300 focus:ring-[#D1A743]"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">{option.label}</span>
+                </label>
+              ))}
+            </div>
+
+            {/* Discount Filter */}
+            <div className="mb-6 border-b pb-6">
+              <h4 className="font-medium mb-3">{FILTER_CONFIG.discount.title}</h4>
+              {FILTER_CONFIG.discount.options.map((option) => (
+                <label key={option.value} className="flex items-center mb-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="discount"
+                    checked={selectedDiscount === option.value}
+                    onChange={() => setSelectedDiscount(option.value)}
+                    className="w-4 h-4 text-[#D1A743] border-gray-300 focus:ring-[#D1A743]"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">{option.label}</span>
+                </label>
+              ))}
+            </div>
+
+            {/* Rating Filter */}
+            <div className="mb-6">
+              <h4 className="font-medium mb-3">{FILTER_CONFIG.rating.title}</h4>
+              {FILTER_CONFIG.rating.options.map((option) => (
+                <label key={option.value} className="flex items-center mb-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="rating"
+                    checked={selectedRating === option.value}
+                    onChange={() => setSelectedRating(option.value)}
+                    className="w-4 h-4 text-[#D1A743] border-gray-300 focus:ring-[#D1A743]"
+                  />
+                  <span className="ml-2 text-sm text-gray-700">{option.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* PRODUCTS SECTION */}
+        <div className="flex-1">
+          {/* Header with Results Count and Sort */}
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+            <div className="text-sm text-gray-600">
+              Showing {sortedProducts.length} {sortedProducts.length === 1 ? 'product' : 'products'}
+            </div>
+
+            <div className="flex items-center gap-2 w-full sm:w-auto">
+              <select 
+                className="border rounded-md px-3 py-2 text-sm flex-1 sm:flex-none"
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+              >
+                <option value="featured">Sort By: Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Customer Rating</option>
+                <option value="discount">Discount</option>
+              </select>
+            </div>
+          </div>
+
+          {/* No Results Message */}
+          {sortedProducts.length === 0 && (
+            <div className="text-center py-12">
+              <h3 className="text-lg font-medium text-gray-900 mb-2">No products found</h3>
+              <p className="text-gray-600 mb-4">Try adjusting your filters</p>
+              <button
+                onClick={clearFilters}
+                className="bg-[#D1A743] text-white px-6 py-2 rounded-lg hover:bg-[#b78e34] transition"
+              >
+                Clear All Filters
+              </button>
+            </div>
+          )}
+
+          {/* PRODUCT GRID */}
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-4 md:gap-6">
+            {sortedProducts.map((product) => (
+              <div
+                key={product.id}
+                className="border rounded-xl p-3 md:p-4 hover:shadow-lg transition cursor-pointer group"
+              >
+                <div className="relative">
+                  <img
+                    src={product.img}
+                    alt={product.name}
+                    className="w-full h-[150px] md:h-[200px] object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+                  />
+                  {product.discount > 0 && (
+                    <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
+                      {product.discount}% OFF
+                    </span>
+                  )}
+                </div>
+
+                <h3 className="mt-3 font-medium text-sm md:text-base">{product.name}</h3>
+                
+                <div className="flex items-center gap-1 mt-1">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className={`text-xs ${i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'}`}>★</span>
+                  ))}
+                  <span className="text-xs text-gray-500 ml-1">({product.rating})</span>
+                </div>
+
+                <div className="mt-2 flex items-center gap-2">
+                  <p className="text-[#D1A743] font-semibold text-sm md:text-base">
+                    ₹{product.price.toLocaleString()}
+                  </p>
+                  {product.discount > 0 && (
+                    <p className="text-xs text-gray-400 line-through">
+                      ₹{(product.price * (100 + product.discount) / 100).toFixed(0)}
+                    </p>
+                  )}
+                </div>
+
+                <div className="mt-2 flex flex-wrap gap-1">
+                  <span className="text-[10px] bg-gray-100 px-2 py-1 rounded-full">
+                    {product.material}
+                  </span>
+                  <span className="text-[10px] bg-gray-100 px-2 py-1 rounded-full">
+                    {product.occasion}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

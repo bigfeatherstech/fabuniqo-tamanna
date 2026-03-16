@@ -177,6 +177,10 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import vjs231 from "../../assets/vjs-231-silverWhite (3).png"
+import Rss206 from "../../assets/Rss-206  (2).png";
+
+
 
 const EliteBanner = () => {
   const fabniquoGold = "rgb(209,167,67)";
@@ -187,7 +191,8 @@ const EliteBanner = () => {
       {/* Mobile Background Image */}
       <div className="lg:hidden absolute inset-0 overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=80" 
+          // src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=80" 
+          src={vjs231}
           alt="Luxury Jewelry"
           className="w-full h-full object-cover"
         />
@@ -207,7 +212,8 @@ const EliteBanner = () => {
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] h-[120%] hidden lg:block">
           <div className="relative w-full h-full overflow-hidden group shadow-2xl">
             <img 
-              src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=80" 
+              // src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=80" 
+              src={Rss206}
               alt="Luxury Jewelry"
               className="w-full h-full object-cover grayscale transition-transform duration-[2s] group-hover:scale-110 group-hover:grayscale-0"
             />

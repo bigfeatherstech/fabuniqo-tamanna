@@ -5,13 +5,22 @@ import RsetRed from "../../assets/Rset-red (2).png";
 import Rss203 from "../../assets/Rss - 203 (4).png";
 import vjs230 from "../../assets/vjs-230 (1).png";
 import vjs231 from "../../assets/vjs-232 (1).png";
-// import img4 from "\src\assets\Rss -201 (3).png";
-// import img4 from "../../../src/assets/Rss-201 (3).png";
-// import img5 from "../../assets/Rss-202  (2).png";
-// import img6 from "../../assets/Rss-206 (2).png";
-// import img7 from "../../assets/Rss-222 (1).png";
-// import img8 from "../../assets/vjs-230 (1).png";
-// import img9 from "../../assets/vjs-232 (1).png";
+
+
+import Rssred  from "../../assets/Rset-red (2).png"
+
+import Rss201 from "../../assets/Rss -201 (3).png"
+import Rss201A from "../../assets/Rss -201 (4).png"
+import Rss204 from "../../assets/Rss-204 (2).png"
+import Rss205 from "../../assets/Rss-205 (3).png"
+import Rss206 from "../../assets/Rss-206  (2).png"
+import Rss222 from "../../assets/Rss-222 (1).png"
+import Rss225 from "../../assets/Rss-225-gold (1).png"
+import Rss225S from "../../assets/Rss-225-silver (1).png"
+
+
+import Egur158 from "../../assets/Egur 158 Red (3).png"
+import Egur159 from "../../assets/Egur-159-Green (1).png"
 
 
 
@@ -48,36 +57,48 @@ const CategoryGrid = () => {
       // img: 'https://images-static.nykaa.com/uploads/444b85c4-494b-4ced-8f3d-bc6d8cab1654.jpg',
       img: Egur161,
     },
-    { 
-      name: 'Necklace & Pendants', 
+
+      { 
+      name: "Rings", 
+      img: vjs230
+    },
+
+      { 
+      name: 'Bracelets & Bangles', 
       img: vjs230
     },
     { 
-      name: 'Trendings', 
-      img: RsetRed,
+      name: 'Necklace & Pendants', 
+      img: vjs231
     },
+      { 
+      name: 'Mangalsutras', 
+      img: vjs230
+    },
+  
     { 
       name: 'Sets', 
       img: Rss203
     },
-    { 
-      name: 'Earings & Studs', 
-      img: Egur161
-    },
-    { 
-      name: 'Party & Night out', 
-      img: vjs231
-    },
+    //   { 
+    //   name: 'Trendings', 
+    //   img: RsetRed,
+    // },
+    
+    // { 
+    //   name: 'Gifting', 
+    //   img: vjs231
+    // },
 
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section style={{backgroundColor:"#FAE7EB"}} className="py-24 bg-white mb-20">
       <div className="max-w-7xl mx-auto px-4">
         
         {/* Header */}
         <div className="mb-16 text-center">
-          <span className="text-[rgb(209,167,67)] text-[14px] tracking-[0.2em] uppercase font-bold block mb-3">Explore Collections</span>
+          <span className="font-lato text-[rgb(209,167,67)] text-[18px] tracking-[0.2em] uppercase font-bold block mb-3">Explore Collections</span>
           <h2 className="font-light text-5xl font- text-gray-900 tracking-tight">The Archive</h2>
         </div>
 
@@ -105,7 +126,7 @@ const CategoryGrid = () => {
 
                 {/* Title Section */}
                 <div className="px-1 overflow-hidden">
-                  <h3 className="font-main text-xs font-bold text-gray-800 tracking-[0.2em] uppercase transition-all duration-500 group-hover:text-[rgb(209,167,67)] group-hover:translate-x-1">
+                  <h3 className="font-lato font-main text-xs font-bold text-gray-800 tracking-[0.2em] uppercase transition-all duration-500 group-hover:text-[rgb(209,167,67)] group-hover:translate-x-1">
                     {category.name}
                   </h3>
                   <div className="h-[2px] w-8 bg-[rgb(209,167,67)] mt-2 transition-all duration-500 group-hover:w-full" />
@@ -146,7 +167,7 @@ const CategoryGrid = () => {
         key={i} 
         className="flex flex-col items-center text-center sm:text-left sm:items-start"
       >
-        <span style={{display:"block" , margin:"auto"}} className="font-main text-2.5xl text-center sm:text-3xl md:text-3xl lg:text-3.5xl font-bold text-gray-900 mb-1 sm:mb-2">
+        <span style={{display:"block" , margin:"auto"}} className="font-outfit font-main text-2.5xl text-center sm:text-3xl md:text-3xl lg:text-3.5xl font-bold text-gray-900 mb-1 sm:mb-2">
           {s.v}
         </span>
        

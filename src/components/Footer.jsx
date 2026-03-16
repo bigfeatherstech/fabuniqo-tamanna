@@ -672,6 +672,7 @@ const Footer = () => {
   return (
     <>
       <footer className="w-full bg-[#080808] text-white border-t border-white/10 overflow-hidden">
+ 
 
         <div className="max-w-[1700px] mx-auto px-6 lg:px-16">
 

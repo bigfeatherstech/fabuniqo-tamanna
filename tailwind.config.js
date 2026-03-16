@@ -13,6 +13,10 @@ export default {
         sans: ["Roboto Flex", "system-ui", "sans-serif"],
        display: ["Orbitron", "sans-serif"],
        serif: ["Noto Serif", "serif"],
+
+            lato: ["Lato",  "sans-serif"],
+     Rubik: ["Rubik", "sans-serif"],
+     outfit: ["Outfit", "ui-sans-serif", "system-ui", "sans-serif"],
         
       },
       colors: {
@@ -21,6 +25,9 @@ export default {
         'accent': '#FFD700', // Gold accent
         'fab-gold': '#d1a743', // Your brand gold
         'fab-dark': '#0e0e0e',
+        'fab-pink':"#D36E6E",
+       'fab-lightpink':"#FAE7EB",
+
       
        
       },

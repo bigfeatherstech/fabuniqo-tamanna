@@ -199,6 +199,22 @@
 
 import React, { useState } from 'react';
 import { Star, ShoppingBag, Heart, Eye, TrendingUp } from 'lucide-react';
+import Rssred  from "../../assets/Rset-red (2).png"
+import Rss203 from "../../assets/Rss - 203 (4).png"
+import Rss201 from "../../assets/Rss -201 (3).png"
+import Rss201A from "../../assets/Rss -201 (4).png"
+import Rss204 from "../../assets/Rss-204 (2).png"
+import Rss205 from "../../assets/Rss-205 (3).png"
+import Rss206 from "../../assets/Rss-206  (2).png"
+import Rss222 from "../../assets/Rss-222 (1).png"
+import Rss225 from "../../assets/Rss-225-gold (1).png"
+import Rss225S from "../../assets/Rss-225-silver (1).png"
+import vjs230 from "../../assets/vjs-231-rosegold (1).png"
+import vjs231 from "../../assets/vjs-231-silverWhite (3).png"
+import Egur158 from "../../assets/Egur 158 Red (3).png"
+import Egur159 from "../../assets/Egur-159-Green (1).png"
+
+
 
 const BestSellers = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -206,83 +222,92 @@ const BestSellers = () => {
   const bestSellers = [
     {
       id: 1,
-      name: 'Diamond Stud Earrings',
-      category: 'earrings',
+      name: "Green earrings",
+            image : Egur159,
+          category: "Earrings & Studs",
       price: 2499,
       discount: 20,
       rating: 4.8,
       sold: 124,
-      image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=300'
+      // image: 'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=300'
+
     },
     {
       id: 2,
-      name: 'Elegant Gold Ring',
-      category: 'rings',
+        name: "Rose Earings",
+            image : Egur158,
+          category: "Earrings & Studs",
       price: 3999,
       discount: 15,
       rating: 4.7,
       sold: 98,
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=300'
+      // image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=300'
     },
     {
       id: 3,
-      name: 'Rose Gold Bracelet',
-      category: 'bracelets',
+     name: "Elegant Golden set",
+             image : Rss225,
+           category: "Set",
       price: 2899,
       discount: 18,
       rating: 4.6,
       sold: 82,
-      image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=300'
+      // image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=300'
     },
     {
       id: 4,
-      name: 'Diamond Pendant Necklace',
-      category: 'necklace',
+     name: "Golden Stud Earrings",
+             image : Rss222,
+         category: "Earrings & Studs",
       price: 4499,
       discount: 22,
       rating: 4.9,
       sold: 142,
-      image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=300'
+      // image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=300'
     },
     {
       id: 5,
-      name: 'Traditional Mangalsutra',
-      category: 'mangalsutra',
+          name: "Yellow Beads Set",
+                image :Rss206,
+            category: "Set",
       price: 5999,
       discount: 25,
       rating: 4.8,
       sold: 73,
-      image: 'https://media.istockphoto.com/id/1395172510/photo/mangalsutra-isolated-on-white-background.jpg'
+      // image: 'https://media.istockphoto.com/id/1395172510/photo/mangalsutra-isolated-on-white-background.jpg'
     },
     {
       id: 6,
-      name: 'Bridal Jewellery Set',
-      category: 'sets',
+      name: "Diamond Pendant Necklace Set",
+              image : vjs231,
+          category: "Set",
       price: 9999,
       discount: 30,
       rating: 4.9,
       sold: 210,
-      image: 'https://media.istockphoto.com/id/1175408308/photo/embrace-your-inner-queen-with-these-exquisite-bangles.jpg'
+      // image: 'https://media.istockphoto.com/id/1175408308/photo/embrace-your-inner-queen-with-these-exquisite-bangles.jpg'
     },
     {
       id: 7,
-      name: 'Pearl Stud Earrings',
-      category: 'earrings',
+       name: "Exclusive Jewellery Set",
+         image :vjs230,
+       category: "Jewellery Sets",
       price: 1999,
       discount: 15,
       rating: 4.7,
       sold: 95,
-      image: 'https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=300'
+      // image: 'https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=300'
     },
     {
       id: 8,
-      name: 'Gold Plated Ring',
-      category: 'rings',
+      name: "Traditional Black Beads Set",
+             image : Rss205,
+          category: "Set",
       price: 2299,
       discount: 12,
       rating: 4.6,
       sold: 88,
-      image: 'https://images.unsplash.com/photo-1602752274594-2d7d4b91b64e?w=300'
+      // image: 'https://images.unsplash.com/photo-1602752274594-2d7d4b91b64e?w=300'
     }
   ];
 
@@ -316,18 +341,19 @@ const BestSellers = () => {
 
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[rgb(209,167,67)]/10 to-transparent rounded-full border border-[rgb(209,167,67)]/20 mb-4">
               <TrendingUp className="w-4 h-4 text-[rgb(209,167,67)]" />
-              <span className="font-main text-xs font-medium text-[rgb(209,167,67)] tracking-wider">
+              <span className="font-lato font-main text-md font-medium  text-fab-pink tracking-wider">
                 BEST SELLERS
               </span>
             </div>
 
-            <h2 className="text-2xl md:text-3xl font-light text-[#0e0e0e] mb-3">
-              Most Loved <span style={{ color: '#D1A743', fontWeight: "500px" }}>Jewellery</span>
+            <h2 className="text-2xl md:text-4xl font-light text-[#0e0e0e] mb-3">
+              Most  <span style={{ color: '#D1A743', fontWeight: "400"}}>Loved Jewellery</span>
             </h2>
 
-            <p className="font-main text-sm text-gray-600">
+            <p className="font-lato font-main text-md text-gray-600">
               Trending jewellery customers love the most
             </p>
+
 
           </div>
 
@@ -341,7 +367,7 @@ const BestSellers = () => {
                 onClick={() => setActiveFilter(filter.key)}
                 className={`px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200 ${
                   activeFilter === filter.key
-                    ? 'bg-[rgb(209,167,67)] text-white'
+                    ? 'bg-fab-pink text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-gray-900'
                 }`}
               >
@@ -376,8 +402,8 @@ const BestSellers = () => {
                 {/* Discount Badge */}
                 <div className="absolute top-3 left-3">
                   <span
-                    className="px-3 py-1 text-xs font-main font-bold text-white rounded"
-                    style={{ backgroundColor: 'rgb(209,167,67)' }}
+                    className="px-3 py-1 text-xs font-main font-bold text-white rounded bg-fab-pink"
+                    // style={{ backgroundColor: 'rgb(209,167,67)' }}
                   >
                     -{product.discount}%
                   </span>
@@ -439,7 +465,7 @@ const BestSellers = () => {
 
                 </div>
 
-                <button className="w-full py-2 text-xs font-semibold rounded bg-gray-100 text-gray-800 hover:bg-[rgb(209,167,67)] hover:text-white transition flex items-center justify-center gap-2 group-hover:bg-[rgb(209,167,67)] group-hover:text-white">
+                <button className="w-full py-2 text-xs font-semibold rounded bg-[#FAE7EB] text-gray-800 hover:bg-[black] hover:text-white transition flex items-center justify-center gap-2  group-hover:text-white">
                   <ShoppingBag className="w-3 h-3" />
                   Add to Cart
                 </button>

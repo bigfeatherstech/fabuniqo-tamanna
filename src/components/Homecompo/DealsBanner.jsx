@@ -450,7 +450,7 @@ const DealsBanner = () => {
 
       ref={bannerTrackRef}
       className="relative py-22 bg-gradient-to-r from-[rgb(247,224,193)] via-white to-[rgb(247,224,193)] overflow-hidden"
-      style={{ contain: 'content' , border:"2px solid green" }}
+      style={{ contain: 'content'}}
     >
 
       {/* BIG BACKGROUND TYPOGRAPHY */}
@@ -494,11 +494,11 @@ const DealsBanner = () => {
 
                 <div>
 
-                  <span className="font-main text-xs font-bold text-[rgb(209,167,67)] uppercase tracking-[0.4em]">
+                  <span className="font-lato font-main text-m font-bold text-[rgb(209,167,67)] uppercase tracking-[0.4em]">
                     Limited Time
                   </span>
 
-                  <h3 className="font-main text-4xl font-bold text-gray-900 mt-1">
+                  <h3 className="font-main text-4xl font-bold text-[#D36F6F] mt-1">
                     Jewellery Fest
                   </h3>
 
@@ -548,7 +548,7 @@ const DealsBanner = () => {
 
               {/* CTA BUTTON */}
 
-              <button className="group relative px-10 py-5 bg-gray-900 text-white rounded-full overflow-hidden hover:bg-[rgb(209,167,67)] transition-all duration-500">
+              <button className="group relative px-10 py-5 bg-gray-900 text-[#D36F6F] rounded-full overflow-hidden hover:bg-[rgb(209,167,67)] transition-all duration-500">
 
                 <span className="relative z-10 font-main font-bold text-xs uppercase tracking-widest flex items-center gap-3">
 
@@ -591,7 +591,7 @@ const DealsBanner = () => {
 
                     <div className="space-y-1">
 
-                      <h5 className="font-main font-semibold text-gray-900 group-hover:text-[rgb(209,167,67)] transition-colors">
+                      <h5 className="font-outfit font-main font-semibold  group-hover:text-[rgb(209,167,67)] transition-colors text-[#D36F6F]">
                         {deal.name}
                       </h5>
 

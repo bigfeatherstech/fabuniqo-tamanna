@@ -1890,13 +1890,16 @@ function Navbar() {
               {/* Navigation Items */}
               {desktopNavItems.map((item) => (
                 <NavLink
+                // style ={{border:"2px solid red"}} 
                   key={item.name}
                   to={item.path}
                   className={({ isActive }) =>
-                    `relative text-sm xl:text-[15px] font-semibold tracking-wide transition-all duration-300 group py-2 ${
+                    `text-["#D36E6E"] relative text-sm xl:text-[15px] font-semibold tracking-wide transition-all duration-300 group py-2 font-lato ${
                       isActive 
                         ? "text-[#d5a541]" 
                         : "text-[#0e0e0e] hover:text-[#d5a541]"
+                      // : "text-[#D36E6E] hover:text-[#d5a541]"
+
                     }`
                   }
                   onMouseEnter={(e) => {
@@ -1930,7 +1933,7 @@ function Navbar() {
                     style={{marginLeft:"20px"}}
                     type="text"
                     placeholder="Search products..."
-                    className="w-48 xl:w-56 py-2.5 pl-4 pr-12 bg-gray-50 border border-gray-200 rounded-full outline-none transition-all duration-300 text-sm hover:border-[#d5a54140] focus:border-[#d5a541] focus:shadow-[0_0_15px_#d5a54130]"
+                    className="font-latow-48 xl:w-56 py-2.5 pl-4 pr-12 bg-gray-50 border border-gray-200 rounded-full outline-none transition-all duration-300 text-sm hover:border-[#d5a54140] focus:border-[#d5a541] focus:shadow-[0_0_15px_#d5a54130]"
                   />
                   <CiSearch className="absolute right-3 top-1/2 -translate-y-1/2 text-xl text-gray-600" />
                 </div>

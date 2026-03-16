@@ -164,6 +164,20 @@
 
 import React, { useState } from 'react';
 import { MoveRight } from 'lucide-react';
+import Rssred  from "../../assets/Rset-red (2).png"
+import Rss203 from "../../assets/Rss - 203 (4).png"
+import Rss201 from "../../assets/Rss -201 (3).png"
+import Rss201A from "../../assets/Rss -201 (4).png"
+import Rss204 from "../../assets/Rss-204 (2).png"
+import Rss205 from "../../assets/Rss-205 (3).png"
+import Rss206 from "../../assets/Rss-206  (2).png"
+import Rss222 from "../../assets/Rss-222 (1).png"
+import Rss225 from "../../assets/Rss-225-gold (1).png"
+import Rss225S from "../../assets/Rss-225-silver (1).png"
+import vjs230 from "../../assets/vjs-231-rosegold (1).png"
+import vjs231 from "../../assets/vjs-231-silverWhite (3).png"
+import Egur158 from "../../assets/Egur 158 Red (3).png"
+import Egur159 from "../../assets/Egur-159-Green (1).png"
 
 const BrandArchiveTimeline = () => {
   const [activeYear, setActiveYear] = useState(0);
@@ -172,11 +186,17 @@ const BrandArchiveTimeline = () => {
     {
       year: "2022",
       collection: "Golden Origins",
-      description:
-        "Our journey began with handcrafted gold pieces inspired by timeless Indian heritage and minimal luxury.",
-      image:
-        "https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=800&auto=format&fit=crop",
-      signature: "Royal Gold studs",
+    //   description:
+    //     "Our journey began with handcrafted gold pieces inspired by timeless Indian heritage and minimal luxury.",
+    //  name: "Green earrings",
+    //             image : Egur159,
+    //           signature: "Earrings & Studs",
+     description:
+        "A luxurious bridal collection featuring intricate mangalsutras, bangles, and royal necklace sets.",
+      signature: "Golden Stud Earrings",
+                 image : Rss222,
+             category: "Earrings & Studs",
+              
       price: "₹24,900"
     },
     {
@@ -184,9 +204,9 @@ const BrandArchiveTimeline = () => {
       collection: "Sparkle Era",
       description:
         "A celebration of brilliance featuring diamond-studded rings and earrings designed for modern elegance.",
-      image:
-        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=800&auto=format&fit=crop",
-      signature: "Platinum necklace",
+      signature: "Diamond Pendant Necklace Set",
+                   image : vjs231,
+               category: "Set",
       price: "₹32,500"
     },
     {
@@ -194,19 +214,19 @@ const BrandArchiveTimeline = () => {
       collection: "Pearl Elegance",
       description:
         "Inspired by ocean beauty, this collection introduced graceful pearl necklaces and delicate pendants.",
-      image:
-        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=800&auto=format&fit=crop",
-      signature: "Pearl Drop Bracelet",
+     signature: "Traditional Black Beads Set",
+                 image : Rss205,
+              category: "Set",
       price: "₹18,700"
     },
     {
       year: "2025",
       collection: "Bridal Heritage",
-      description:
-        "A luxurious bridal collection featuring intricate mangalsutras, bangles, and royal necklace sets.",
-      image:
-        "https://cdn.pixabay.com/photo/2021/04/12/08/19/bride-6171757_1280.jpg",
-      signature: "Kundan Bridal Set",
+        description:
+        "Our journey began with handcrafted gold pieces inspired by timeless Indian heritage and minimal luxury.",
+     name: "Green earrings",
+                image : Egur159,
+              signature: "Earrings & Studs",
       price: "₹48,900"
     },
     {
@@ -214,9 +234,9 @@ const BrandArchiveTimeline = () => {
       collection: "Modern Minimal",
       description:
         "Sleek, lightweight jewelry crafted for everyday elegance with contemporary geometric designs.",
-      image:
-        "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?q=80&w=800&auto=format&fit=crop",
-      signature: "Minimal Gold Bracelet",
+      signature: "Exclusive Jewellery Set",
+              image :vjs230,
+            category: "Jewellery Sets",
       price: "₹12,900"
     }
   ];
@@ -235,7 +255,7 @@ const BrandArchiveTimeline = () => {
 
         {/* Header */}
         <div className="mb-16 text-center md:text-left">
-          <span className="text-[rgb(209,167,67)] tracking-[0.2em] text-[14px] font-bold uppercase block mb-4">
+          <span className="text-[rgb(209,167,67)] tracking-[0.2em] text-[14px] font-bold font-lato uppercase block mb-4">
             Legacy & Craftsmanship
           </span>
 
@@ -247,7 +267,7 @@ const BrandArchiveTimeline = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
 
           {/* Image Section */}
-          <div className="lg:col-span-6">
+          <div  className="lg:col-span-6">
             <div className="relative aspect-[4/5] overflow-hidden bg-zinc-200 group rounded-lg shadow-xl">
 
               {archiveData.map((item, index) => (
@@ -269,7 +289,9 @@ const BrandArchiveTimeline = () => {
                   Signature Jewelry
                 </p>
 
-                <h4 className="text-sm font-bold text-zinc-900">
+                {/* <h4 className="text-sm font-bold text-zinc-900"> */}
+                                <h4 className="text-sm font-bold text-fab-pink">
+
                   {archiveData[activeYear].signature}
                 </h4>
 
@@ -317,9 +339,11 @@ const BrandArchiveTimeline = () => {
                     />
 
                     <span
-                      className={`text-[11px] font-bold transition-all duration-500 ${
+                      className={`text-[14px] font-bold transition-all duration-500 ${
                         activeYear === index
-                          ? "text-black scale-125"
+                          // ? "text-black scale-125"
+                          // : "text-zinc-400"
+                          ? "text-fab-pink scale-105"
                           : "text-zinc-400"
                       }`}
                     >

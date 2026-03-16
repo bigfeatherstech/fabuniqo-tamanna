@@ -185,6 +185,10 @@ import vedio11 from "../../assets/vedio 11.mp4";
 import vedio12 from "../../assets/vedio 12.mp4";
 import vedio13 from "../../assets/vedio 13.mp4";
 import vedio14 from "../../assets/vedio 14.mp4";
+import vediod from "../../assets/vediod.mp4"
+import vedioe from "../../assets/vedioe.mp4"
+import vediof from "../../assets/vediof.mp4"
+
 
 const FashionEcomGallery = () => {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -196,7 +200,7 @@ const FashionEcomGallery = () => {
       id: 1,
       title: "Diamond Elegance",
       category: "Necklace & Pendants",
-      videoUrl: vedio11,
+      videoUrl: vedioe,
       product: {
         name: "Diamond Halo Pendant",
         price: "$520",
@@ -206,8 +210,8 @@ const FashionEcomGallery = () => {
     {
       id: 2,
       title: "Golden Radiance",
-      category: "Bracelets & Bangles",
-      videoUrl: vedio12,
+      category: "Necklace & Pendants",
+      videoUrl: vediod,
       product: {
         name: "18K Gold Charm Bracelet",
         price: "$340",
@@ -217,8 +221,8 @@ const FashionEcomGallery = () => {
     {
       id: 3,
       title: "Bridal Heritage",
-      category: "Mangalsutras",
-      videoUrl: vedio13,
+      category: "Set",
+      videoUrl: vediof,
       product: {
         name: "Traditional Diamond Mangalsutra",
         price: "$890",
@@ -253,11 +257,11 @@ const FashionEcomGallery = () => {
         {/* Header */}
         <div className="flex justify-between items-end mb-10 border-b border-zinc-100 pb-8">
           <div>
-            <span className="text-[10px] tracking-[0.3em] font-bold text-zinc-400 uppercase">
+            <span className="text-[10px] tracking-[0.3em] font-lato font-bold text-zinc-400 uppercase">
               Shop the Jewelry Edit
             </span>
             <h2 className="text-4xl md:text-5xl font-light tracking-tighter text-zinc-900 mt-2">
-              Jewelry <span className="italic font-serif">In Focus</span>
+              Jewellry <span className="italic font-serif text-fab-pink font-semibold">In Focus</span>
             </h2>
           </div>
 
@@ -335,8 +339,10 @@ const FashionEcomGallery = () => {
                   onMouseEnter={() => setActiveIdx(index)}
                   className={`relative p-6 cursor-pointer transition-all duration-500 border rounded-sm ${
                     activeIdx === index
-                      ? 'border-black bg-zinc-50'
-                      : 'border-zinc-100 hover:border-zinc-300'
+                      // ? 'border-black bg-zinc-50'
+                      // : 'border-zinc-100 hover:border-zinc-300'
+                       ? 'border-fab-pink bg-zinc-50'
+                      : 'border-fab-pink hover:border-fab-pink'
                   }`}
                 >
                   <div className="flex justify-between items-center">
@@ -366,7 +372,7 @@ const FashionEcomGallery = () => {
                   </div>
 
                   {activeIdx === index && (
-                    <div className="absolute bottom-0 left-0 h-[3px] bg-black w-full origin-left animate-[progress_8s_linear]" />
+                    <div className="absolute bottom-0 left-0 h-[3px] bg-fab-pink w-full origin-left animate-[progress_8s_linear]" />
                   )}
                 </div>
               ))}

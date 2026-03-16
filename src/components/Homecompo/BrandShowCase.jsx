@@ -19,7 +19,7 @@ const BrandShowcase = () => {
     <section className="relative z-10 bg-white pt-20 pb-0 overflow-hidden">
       {/* SECTION HEADER */}
       <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-        <span style={{ color: fabniquoGold }} className="text-xs text-[14px] font-bold tracking-[0.2em] uppercase mb-4 block animate-pulse">
+        <span style={{ color: fabniquoGold }} className="text-xs text-[18px] font-bold tracking-[0.2em] uppercase mb-4 block animate-pulse">
           Featured Labels
         </span>
         <h2 className="text-4xl md:text-5xl  text-gray-900 mb-4 font-light">The Artisans of Fabniquo</h2>
@@ -45,7 +45,7 @@ const BrandShowcase = () => {
         </div>
       </div> */}
 
-      <div className="relative flex overflow-x-hidden border-y border-gray-100 py-10 mb-20">
+      <div style={{border:"" , backgroundColor:"#FAE7EB"}} className="bg-fabpink relative flex overflow-x-hidden border-y border-gray-100 py-10 mb-20">
   <div className="animate-marquee flex whitespace-nowrap items-center">
     {[...Array(2)].map((_, i) => (
       <div key={i} className="flex items-center">

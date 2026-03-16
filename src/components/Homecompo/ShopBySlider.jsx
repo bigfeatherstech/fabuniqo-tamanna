@@ -7,6 +7,8 @@ import RsetRed from "../../assets/Rset-red (2).png";
 import Rss203 from "../../assets/Rss - 203 (4).png";
 import vjs230 from "../../assets/vjs-230 (1).png";
 import vjs231 from "../../assets/vjs-232 (1).png";
+import Rss222 from "../../assets/Rss-222 (2).png";
+import Rss204 from "../../assets/Rss-204 (2).png";
 
 const ShopBySlider = () => {
   const scrollRef = useRef(null);
@@ -24,10 +26,10 @@ const ShopBySlider = () => {
   
 
     { name: 'Everyday' , image: vjs231},
-    { name: 'Work & Office ' ,image: RsetRed}, 
+    { name: 'Work & Office ' ,image: Rss222}, 
     { name: 'Festivals', image: Rss203},
     { name: 'Party & Night out ', image: vjs230},
-    { name: 'Weddings', image: Egur161},
+    { name: 'Weddings', image: Rss204},
     // { name: 'Summer Styles', image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&auto=format&fit=crop', count: 245 },
     // { name: 'Accessories', image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&auto=format&fit=crop', count: 312 },
   
@@ -111,12 +113,15 @@ const ShopBySlider = () => {
             </p>
           </div> */}
           
-<div>
-  <h2 className="font-light text-2xl md:text-3xl font- text-gray-900 animate-bounce-soft">
-    New <span style={{ color: "#D1A743" }}>Arrivals</span>
+<div >
+  <div style={{padding:"13px" , borderRadius:"50px" , width:"200px" , backgroundColor:"#d36e6e"}}>
+ <h2 style={{fontSize:"32px"}} className="font-light text-2xl md:text-3xl font- text-gray-900 animate-bounce-soft">
+    New <span style={{ color: "#cfa84b", fontWeight:"400"}}>Arrivals</span>
   </h2>
+  </div>
+ 
 
-  <p className="font-main text-gray-600 mt-2">
+  <p style={{fontSize:"24px"}} className="font-main text-gray-600 mt-2 font-lato">
     Browse through our curated collections
   </p>
 </div>
@@ -164,10 +169,10 @@ const ShopBySlider = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                   
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <h3 className="font-Noto text-xl font-semibold mb-2">
+                    <h3 className="font-lato text-xl font-semibold mb-2 text-[#CFA84B]">
                       {category.name}
                     </h3>
-                    <p className="font-poppins text-sm opacity-90">
+                    <p className="font-lato text-lg opacity-90 text-[#D36E6E]">
                       {category.count} items
                     </p>
                   </div>

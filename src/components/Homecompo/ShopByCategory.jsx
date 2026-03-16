@@ -13,6 +13,26 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
+import Rssred  from "../../assets/Rset-red (2).png"
+import Rss203 from "../../assets/Rss - 203 (4).png"
+import Rss201 from "../../assets/Rss -201 (3).png"
+import Rss201A from "../../assets/Rss -201 (4).png"
+import Rss204 from "../../assets/Rss-204 (2).png"
+import Rss205 from "../../assets/Rss-205 (3).png"
+import Rss206 from "../../assets/Rss-206  (2).png"
+import Rss222 from "../../assets/Rss-222 (1).png"
+import Rss225 from "../../assets/Rss-225-gold (1).png"
+import Rss225S from "../../assets/Rss-225-silver (1).png"
+import vjs230 from "../../assets/vjs-231-rosegold (1).png"
+import vjs231 from "../../assets/vjs-231-silverWhite (3).png"
+import Egur158 from "../../assets/Egur 158 Red (3).png"
+import Egur159 from "../../assets/Egur-159-Green (1).png"
+import vjs230a from "../../assets/vjs-230 (5).png"
+import vjs230b from "../../assets/vjs-230 (2).png"
+
+
+
+
 const ShopByCategory = () => {
   const [hoveredIndex, setHoveredIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -27,23 +47,34 @@ const ShopByCategory = () => {
      { name: 'Everyday Elegance',
           description: "Minimal yet beautiful jewelry designed to add effortless charm to your daily style.",
 
-       image: 'https://media.istockphoto.com/id/2188506249/photo/hand-figurine-various-jewelry-and-accessories.jpg?s=612x612&w=0&k=20&c=7jnylgA-041k6mgGgWzLEmKJfAle61zO0kt-Kb-2yog=', count: '156' },
+      //  image: 'https://media.istockphoto.com/id/2188506249/photo/hand-figurine-various-jewelry-and-accessories.jpg?s=612x612&w=0&k=20&c=7jnylgA-041k6mgGgWzLEmKJfAle61zO0kt-Kb-2yog=',
+      image :vjs231,  
+      count: '156'
+       },
     { name: 'Office ',
           description: "Refined and graceful pieces crafted to complement your professional elegance.",
 
-       image: 'https://media.istockphoto.com/id/1339130661/photo/chain-shape-golden-bracelet-and-ring-on-pink-box-on-green-paper-background-with-copy-space.jpg?s=612x612&w=0&k=20&c=G2wlnMCohdihUVrrdMLCFIRd2SGSDgqpLOEmIZUnutg=', count: '289' },
+      //  image: 'https://media.istockphoto.com/id/1339130661/photo/chain-shape-golden-bracelet-and-ring-on-pink-box-on-green-paper-background-with-copy-space.jpg?s=612x612&w=0&k=20&c=G2wlnMCohdihUVrrdMLCFIRd2SGSDgqpLOEmIZUnutg=',
+        image: vjs230a,
+      count: '289' },
     { name: 'Party & Night out Glamour ',
           description: "Statement jewelry that shines bright and adds sparkle to every celebration.",
 
-       image: 'https://media.istockphoto.com/id/1011494028/photo/beautiful-girl.jpg?s=612x612&w=0&k=20&c=9vVd2yPvkoCJL6p8N7MElfuv2dmNCK-UvR7MBTh4aLE=', count: '187' },
+      //  image: 'https://media.istockphoto.com/id/1011494028/photo/beautiful-girl.jpg?s=612x612&w=0&k=20&c=9vVd2yPvkoCJL6p8N7MElfuv2dmNCK-UvR7MBTh4aLE=', 
+      image : vjs230, 
+      count: '187' },
     { name: 'Festival Radiance', 
           description: "Traditional yet modern designs perfect for festivals and joyful moments.",
 
-      image: 'https://media.istockphoto.com/id/1296634658/photo/indian-traditional-gold-wedding-earrings-on-wooden-box.jpg?s=612x612&w=0&k=20&c=I50vTgqCA1j3t9R09qk1xIjn72lLxi_prB9kQAXFdz4=', count: '098' },
+      // image: 'https://media.istockphoto.com/id/1296634658/photo/indian-traditional-gold-wedding-earrings-on-wooden-box.jpg?s=612x612&w=0&k=20&c=I50vTgqCA1j3t9R09qk1xIjn72lLxi_prB9kQAXFdz4=',
+      image : Rss203,
+      count: '098' },
     { name: 'wedding Royalty', 
           description: "Luxurious bridal jewelry crafted to make your most special day unforgettable.",
 
-      image: 'https://media.istockphoto.com/id/2219482315/photo/elegant-hands-adorned-with-gold-jewelry-and-intricate-henna-design.jpg?s=612x612&w=0&k=20&c=-u-s4-88dFOghXbPMxTldbM9Ra8IN7Jzub-28vMfgU8=', count: '176' },
+      // image: 'https://media.istockphoto.com/id/2219482315/photo/elegant-hands-adorned-with-gold-jewelry-and-intricate-henna-design.jpg?s=612x612&w=0&k=20&c=-u-s4-88dFOghXbPMxTldbM9Ra8IN7Jzub-28vMfgU8=',
+       image: Egur158,
+      count: '176' },
   ];
 
   useEffect(() => {
@@ -96,10 +127,9 @@ const ShopByCategory = () => {
         <div className={`mb-12 transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 translate-y-4'}`}>
           <div className="flex items-end justify-between border-b border-gray-100 pb-6">
             <div>
-              <span className="text-[14px] tracking-[0.2em] uppercase text-[rgb(209,167,67)] font-bold">The Atelier</span>
-              <h3 className="text-3xl md:text-5xl font-light  tracking-tighter text-gray-900  font- mt-2">Shop By Ocassion</h3>
+              <span className="font-sans text-[14px] tracking-[0.2em] uppercase text-[rgb(209,167,67)] font-bold">The Fabuniqo</span>
+              <h3 style={{borderRadius:"50px" , padding:"15px" , backgroundColor:"black"}} className="text-red-400 text-3xl md:text-4xl font-light  tracking-tighter text-gray-900  font- mt-2">Shop By Ocassion</h3>
 
-              {/* text-4xl md:text-5xl font-light tracking-tighter text-zinc-900 mt-2 */}
             </div>
             <p className="hidden md:block text-[10px] tracking-widest text-gray-400 uppercase italic">Autumn / Winter 2026</p>
           </div>
@@ -139,20 +169,20 @@ const ShopByCategory = () => {
                 </span>
 
                 <div className={`transition-all duration-700 ${hoveredIndex === i ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                  <h4 className="text-3xl md:text-5xl text-white font-serif italic tracking-tight mb-4">{cat.name}</h4>
-                  <p className="text-white/70 text-[18px] text-semibold mb-4">{cat.description}</p>
+                  <h4 className="text-3xl md:text-5xl text-[#D36F6F] font-lato tracking-tight mb-4">{cat.name}</h4>
+                  <p className="text-white/70 text-[18px] text-semibold mb-4 font-lato">{cat.description}</p>
                   <div className="flex items-center gap-6">
-                    <button className="text-white text-[10px] uppercase tracking-[0.3em] border-b border-[rgb(209,167,67)] pb-2 transition-colors">
+                    <button className="font-lato text-white text-[10px] uppercase tracking-[0.3em] border-b border-[rgb(209,167,67)] pb-2 transition-colors">
                       Discover
                     </button>
-                    <span className="text-white/40 text-[9px] tracking-widest uppercase">{cat.count} Pieces</span>
+                    <span className="font-lato text-white/40 text-[9px] tracking-widest uppercase">{cat.count} Pieces</span>
                   </div>
                 </div>
               </div>
 
               {/* Inactive Vertical Title */}
               <div className={`absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-500 ${hoveredIndex === i ? 'opacity-0' : 'opacity-100'}`}>
-                 <p className="rotate-90 text-[10px] tracking-[0.8em] uppercase text-white font-light whitespace-nowrap">
+                 <p className="font-lato rotate-90 text-[10px] tracking-[0.8em] uppercase text-white font-light whitespace-nowrap">
                    {cat.name}
                  </p>
               </div>

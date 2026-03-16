@@ -336,7 +336,9 @@ const VIPMembershipSection = () => {
   };
 
   return (
-    <section className="relative py-24 px-6 bg-[#0a0a0a] overflow-hidden">
+    // <section className="relative py-24 px-6 bg-[#0a0a0a] overflow-hidden">
+        <section style={{borderRadius:"100px"}} className="relative py-24 px-6 bg-[#0a0a0a] overflow-hidden">
+
 
       {/* Floating diamond particles */}
       <div className="absolute inset-0 pointer-events-none">
@@ -376,7 +378,7 @@ const VIPMembershipSection = () => {
 
             <h2 className="text-4xl md:text-6xl font-light text-white tracking-tighter leading-tight">
               Enter the <br />
-              <span className="text-[rgb(209,167,67)]">Fabuniqo Circle</span>
+              <span className="text-fab-pink">Fabuniqo Circle</span>
             </h2>
 
             <p className="text-zinc-400 text-lg font-light leading-relaxed max-w-md">
@@ -415,6 +417,7 @@ const VIPMembershipSection = () => {
 
           {/* RIGHT SIDE CARD */}
           <div
+     
             className="relative"
             onMouseMove={handleMouseMove}
           >
@@ -433,7 +436,7 @@ const VIPMembershipSection = () => {
                 {/* Leather texture */}
                 <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/dark-leather.png')]"></div>
 
-                <h3 className="text-2xl text-white font-medium mb-2 tracking-tight">
+                <h3 className="text-2xl  font-medium mb-2 tracking-tight text-fab-pink">
                   Create your Profile
                 </h3>
 
@@ -461,7 +464,7 @@ const VIPMembershipSection = () => {
                   {/* Shimmer Button */}
                   <button
                     type="submit"
-                    className="relative w-full overflow-hidden bg-[rgb(209,167,67)] hover:bg-[rgb(180,140,50)] text-black font-bold py-5 px-8 rounded-sm tracking-[0.2em] uppercase text-xs flex items-center justify-center gap-3 transition-all active:scale-[0.98]"
+                    className="relative w-full overflow-hidden bg-fab-lightpink hover:bg-[rgb(180,140,50)] text-black font-bold py-5 px-8 rounded-sm tracking-[0.2em] uppercase text-xs flex items-center justify-center gap-3 transition-all active:scale-[0.98]"
                   >
                     <span className="relative z-10 flex items-center gap-3">
                       Request Invitation <ArrowRight size={16} />

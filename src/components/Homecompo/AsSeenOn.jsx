@@ -259,6 +259,28 @@
 
 import React from "react";
 import { Instagram, ShoppingBag, Heart, ExternalLink } from "lucide-react";
+import Rssred  from "../../assets/Rset-red (2).png"
+import Rss203 from "../../assets/Rss - 203 (4).png"
+import Rss201 from "../../assets/Rss -201 (3).png"
+import Rss201A from "../../assets/Rss -201 (4).png"
+import Rss204 from "../../assets/Rss-204 (2).png"
+import Rss205 from "../../assets/Rss-205 (3).png"
+import Rss206 from "../../assets/Rss-206  (2).png"
+import Rss222 from "../../assets/Rss-222 (1).png"
+import Rss222a from "../../assets/Rss-222 (2).png"
+
+import Rss225 from "../../assets/Rss-225-gold (1).png"
+import Rss225S from "../../assets/Rss-225-silver (1).png"
+import vjs230 from "../../assets/vjs-231-rosegold (1).png"
+import vjs230d from "../../assets/vjs-230 (5).png"
+
+import vjs231 from "../../assets/vjs-231-silverWhite (3).png"
+import vjs231a from "../../assets/vjs-231-silverWhite (2).png"
+import Egur158 from "../../assets/Egur 158 Red (3).png"
+import Egur159 from "../../assets/Egur-159-Green (1).png"
+import vjs230a from "../../assets/vjs-230 (2).png"
+
+
 
 const AsSeenOn = () => {
 
@@ -266,141 +288,141 @@ const AsSeenOn = () => {
     {
       id: 1,
       handle: "@golden_glow",
-      image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d",
-      product: "Gold Stud Earrings",
+       product: "Exclusive Jewellery Set",
+             image :vjs230,
       height: "medium"
     },
     {
       id: 2,
       handle: "@jewel_diaries",
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f",
-      product: "Diamond Ring",
+      product: "Green earrings",
+                 image : vjs230a,
       height: "small"
     },
     {
       id: 3,
       handle: "@style.with.sparkle",
-      image: "https://images.unsplash.com/photo-1611085583191-a3b181a88401",
-      product: "Pearl Necklace",
+       product: "Traditional Black Beads Set",
+                  image : Rss205,
       height: "small"
     },
     {
       id: 4,
       handle: "@elegance_daily",
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908",
-      product: "Gold Pendant",
+       product: "Elegant Golden set",
+                  image : Rss225,
       height: "medium"
     },
     {
       id: 5,
       handle: "@indian_jewels",
-      image: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d",
-      product: "Traditional Mangalsutra",
+       image : vjs230a,
+               product: "Earrings & Studs",
       height: "small"
     },
     {
       id: 6,
       handle: "@minimal_gold",
-      image: "https://images.unsplash.com/photo-1617038260897-41a1f14a9d4b",
-      product: "Minimal Gold Ring",
+        image :Rss206,
+                 product: "Set",
       height: "small"
     },
     {
       id: 7,
       handle: "@bangle.story",
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e",
-      product: "Gold Bangles",
+      image : vjs231,
+              product: "Set",
       height: "medium"
     },
     {
       id: 8,
       handle: "@sparkle_luxury",
-      image: "https://images.unsplash.com/photo-1620656798579-1984d5e87df7",
-      product: "Diamond Bracelet",
+      product: "Traditional Black Beads Set",
+                 image : Rss205,
       height: "small"
     },
     {
       id: 9,
       handle: "@royal_jewels",
-      image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0",
-      product: "Bridal Necklace Set",
+     image : Rss222a,
+               product: "Exclusive Jewellery Set",
       height: "medium"
     },
     {
       id: 10,
       handle: "@daily_gold_style",
-      image: "https://images.unsplash.com/photo-1586878341523-7a9d1b03be15",
-      product: "Gold Chain",
+    product: "Elegant Golden set",
+                  image : Rss225,
       height: "small"
     },
     {
       id: 11,
       handle: "@diamond_story",
-      image: "https://images.unsplash.com/photo-1617038260897-41a1f14a9d4b",
-      product: "Diamond Studs",
+      image : Rss222,
+               product: "Earrings & Studs",
       height: "small"
     },
     {
       id: 12,
       handle: "@heritage_jewels",
-      image: "https://images.unsplash.com/photo-1586878341523-7a9d1b03be15",
-      product: "Temple Necklace",
+product: "Exclusive Jewellery Set",
+             image :vjs230,
       height: "medium"
     },
     {
       id: 13,
       handle: "@fine_gold_edit",
-      image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f",
-      product: "Gold Solitaire Ring",
+        product: "Elegant Golden set",
+                  image : vjs230d,
       height: "small"
     },
     {
       id: 14,
       handle: "@ethnic_shine",
-      image: "https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d",
-      product: "Bridal Mangalsutra",
+     product: "Elegant Golden set",
+                  image : Rss225,
       height: "small"
     },
     {
       id: 15,
       handle: "@luxury_jewels",
-      image: "https://images.unsplash.com/photo-1611652022419-a9419f74343d",
-      product: "Luxury Earrings",
+      product: "Elegant Golden set",
+                  image : Rss225,
       height: "medium"
     },
     {
       id: 16,
       handle: "@pearl_obsession",
-      image: "https://images.unsplash.com/photo-1611085583191-a3b181a88401",
-      product: "Pearl Drop Earrings",
+       product: "Green earrings",
+                 image : Egur159,
       height: "small"
     },
     {
       id: 17,
       handle: "@modern_jewel",
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e",
-      product: "Designer Bracelet",
+     product: "Exclusive Jewellery Set",
+             image :vjs230,
       height: "small"
     },
     {
       id: 18,
       handle: "@timeless_shine",
-      image: "https://images.unsplash.com/photo-1573408301185-9146fe634ad0",
-      product: "Royal Diamond Necklace",
+     product: "Elegant Golden set",
+                  image : Rss225,
       height: "medium"
     },
     {
       id: 19,
       handle: "@golden_collection",
-      image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908",
-      product: "Gold Pendant Necklace",
+     product: "Exclusive Jewellery Set",
+             image :vjs230,
       height: "small"
     },
     {
       id: 20,
       handle: "@fabuniqo_style",
-      image: "https://images.unsplash.com/photo-1620656798579-1984d5e87df7",
-      product: "Luxury Jewelry Set",
+      product: "Elegant Golden set",
+                  image : Rss204,
       height: "medium"
     }
   ];
@@ -429,9 +451,9 @@ const AsSeenOn = () => {
               Jewellery <span className="text-[rgb(209,167,67)]">Spotted</span>
             </h2>
 
-            <p className="mt-4 text-zinc-500 text-sm tracking-wide font-light max-w-sm">
-              Real customers wearing <span className="font-bold text-black">FABUNIQO</span> jewellery.
-              Tag <span className="font-bold text-black">#FABUNIQOJEWELS</span> for a chance to be featured.
+            <p className="mt-4 text-zinc-500 text-md tracking-wide font-light font-lato max-w-sm">
+              Real customers wearing <span className="font-bold text-fab-pink">FABUNIQO</span> jewellery.
+              Tag <span className="font-bold text-fab-pink">#FABUNIQOJEWELS</span> for a chance to be featured.
             </p>
           </div>
 
@@ -443,14 +465,19 @@ const AsSeenOn = () => {
 
 
         {/* MASONRY GRID */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+        <div  className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
 
           {posts.map((post) => (
 
             <div
+            // style={{}}
+            //   key={post.id}
+            //   className={`relative group overflow-hidden bg-zinc-100 rounded-sm cursor-pointer break-inside-avoid mb-4 ${getHeightClass(post.height)}`}
+              style={{borderRadius:"10px" ,backgroundColor:"fab-pink"}}
               key={post.id}
               className={`relative group overflow-hidden bg-zinc-100 rounded-sm cursor-pointer break-inside-avoid mb-4 ${getHeightClass(post.height)}`}
-            >
+           
+           >
 
               <img
                 src={post.image}
@@ -459,7 +486,8 @@ const AsSeenOn = () => {
               />
 
               {/* HOVER OVERLAY */}
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6">
+              {/* <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6"> */}
+              <div className="absolute inset-0 bg-fab-pink/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-between p-6">
 
                 <div className="flex justify-between items-start">
 

@@ -256,6 +256,20 @@
 
 import React, { useState, useEffect } from 'react';
 import { TrendingUp, Sparkles, Eye, ArrowRight, Star, Flame } from 'lucide-react';
+import Rssred  from "../../assets/Rset-red (2).png"
+import Rss203 from "../../assets/Rss - 203 (4).png"
+import Rss201 from "../../assets/Rss -201 (3).png"
+import Rss201A from "../../assets/Rss -201 (4).png"
+import Rss204 from "../../assets/Rss-204 (2).png"
+import Rss205 from "../../assets/Rss-205 (3).png"
+import Rss206 from "../../assets/Rss-206  (2).png"
+import Rss222 from "../../assets/Rss-222 (1).png"
+import Rss225 from "../../assets/Rss-225-gold (1).png"
+import Rss225S from "../../assets/Rss-225-silver (1).png"
+import vjs230 from "../../assets/vjs-231-rosegold (1).png"
+import vjs231 from "../../assets/vjs-231-silverWhite (3).png"
+import Egur158 from "../../assets/Egur 158 Red (3).png"
+import Egur159 from "../../assets/Egur-159-Green (1).png"
 
 const TrendingNow = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -270,9 +284,10 @@ const TrendingNow = () => {
     { 
       tag: '#DiamondElegance', 
       items: 245,
-      image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400&h=400&fit=crop&auto=format',
-      iconImage: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=100&h=100&fit=crop&auto=format',
-      description: 'Stunning diamond pieces',
+         description: "Diamond Pendant Necklace Set",
+                image : vjs231,
+            category: "Set",
+      iconImage: vjs231,
       growth: '+45%',
       jewelry: 'Diamond',
       color: 'from-blue-400/20 to-blue-600/20'
@@ -280,9 +295,10 @@ const TrendingNow = () => {
     { 
       tag: '#GoldJewelry', 
       items: 189,
-      image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop&auto=format',
-      iconImage: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=100&h=100&fit=crop&auto=format',
-      description: 'Traditional gold collection',
+        description: "Traditional Black Beads Set",
+               image : Rss205,
+            category: "Set",
+      iconImage: Rss205,
       growth: '+32%',
       jewelry: 'Gold',
       color: 'from-amber-400/20 to-yellow-600/20'
@@ -290,9 +306,10 @@ const TrendingNow = () => {
     { 
       tag: '#MinimalistRings', 
       items: 156,
-      image: 'https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=400&h=400&fit=crop&auto=format',
-      iconImage: 'https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=100&h=100&fit=crop&auto=format',
-      description: 'Modern minimalist designs',
+        description: "Golden Stud Earrings",
+                image : Rss222,
+            category: "Earrings & Studs",
+      iconImage: Rss222,
       growth: '+28%',
       jewelry: 'Platinum',
       color: 'from-purple-400/20 to-purple-600/20'
@@ -300,9 +317,10 @@ const TrendingNow = () => {
     { 
       tag: '#PearlCollection', 
       items: 203,
-      image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=400&fit=crop&auto=format',
-      iconImage: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=100&h=100&fit=crop&auto=format',
-      description: 'Elegant pearl jewelry',
+        description: "Rose Earings",
+              image : Egur158,
+            category: "Earrings & Studs",
+      iconImage: Egur158,
       growth: '+56%',
       jewelry: 'Pearl',
       color: 'from-pink-400/20 to-rose-500/20'
@@ -310,9 +328,10 @@ const TrendingNow = () => {
     { 
       tag: '#LuxuryBracelets', 
       items: 178,
-      image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop&auto=format',
-      iconImage: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&h=100&fit=crop&auto=format',
-      description: 'Exquisite bracelet designs',
+       description: "Traditional Black Beads Set",
+               image : Rss205,
+            category: "Set",
+      iconImage: Rss205,
       growth: '+41%',
       jewelry: 'Gemstone',
       color: 'from-emerald-400/20 to-teal-500/20'
@@ -320,9 +339,10 @@ const TrendingNow = () => {
     { 
       tag: '#BridalJewelry', 
       items: 134,
-      image: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=400&h=400&fit=crop&auto=format',
-      iconImage: 'https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=100&h=100&fit=crop&auto=format',
-      description: 'Wedding collection',
+       description: "Pearl Multicolor set",
+              image: Rss201,
+            category: "Set",
+      iconImage: Rss201,
       growth: '+67%',
       jewelry: 'Bridal',
       color: 'from-red-400/20 to-rose-600/20'
@@ -331,11 +351,12 @@ const TrendingNow = () => {
 
   // Mini jewelry icons for the bottom section
   const jewelryIcons = [
-    'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=50&h=50&fit=crop&auto=format',
-    'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=50&h=50&fit=crop&auto=format',
-    'https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=50&h=50&fit=crop&auto=format',
-    'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=50&h=50&fit=crop&auto=format',
-    'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=50&h=50&fit=crop&auto=format',
+    // 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=50&h=50&fit=crop&auto=format',
+    // 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=50&h=50&fit=crop&auto=format',
+    // 'https://images.unsplash.com/photo-1608042314453-ae338d80c427?w=50&h=50&fit=crop&auto=format',
+    // 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=50&h=50&fit=crop&auto=format',
+    // 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=50&h=50&fit=crop&auto=format',
+    Rss201,vjs230,Rss203
   ];
 
   return (
@@ -381,10 +402,10 @@ const TrendingNow = () => {
                   <img src={jewelryIcons[0]} alt="" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <p className="text-gray-500 text-xs sm:text-sm flex items-center gap-2">
-                <Sparkles className="w-3 h-3 text-[rgb(209,167,67)]" />
+              <p className="font-lato text-gray-500 text-xs sm:text-sm flex items-center gap-2">
+                <Sparkles className="font-lato w-3 h-3 text-[rgb(209,167,67)]" />
                 Explore what's trending in jewelry right now
-                <Sparkles className="w-3 h-3 text-[rgb(209,167,67)]" />
+                <Sparkles className="font-lato w-3 h-3 text-[rgb(209,167,67)]" />
               </p>
             </div>
           </div>
@@ -426,10 +447,10 @@ const TrendingNow = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   {/* Trending Badge with Animation */}
-                  <div className="absolute top-3 right-3">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-[rgb(209,167,67)] rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity animate-pulse"></div>
-                      <div className="relative px-3 py-1.5 bg-gradient-to-r from-[rgb(209,167,67)] to-[rgb(163,126,42)] rounded-full text-white text-xs font-bold flex items-center gap-1 shadow-lg">
+                  <div className=" absolute top-3 right-3">
+                    <div className=" relative">
+                      <div className="bg-fab-pink absolute inset-0  rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity animate-pulse"></div>
+                      <div className="bg-fab-pink relative px-3 py-1.5  rounded-full text-white text-xs font-bold flex items-center gap-1 shadow-lg">
                         <Flame className="w-3 h-3 animate-pulse" />
                         Trending
                       </div>
