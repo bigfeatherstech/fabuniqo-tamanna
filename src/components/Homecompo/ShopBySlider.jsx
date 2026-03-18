@@ -82,7 +82,7 @@ const ShopBySlider = () => {
     };
 
     // Start auto-scrolling every 5 seconds
-    intervalId = setInterval(autoScroll, 5000);
+    intervalId = setInterval(autoScroll, 1000);
 
     // Cleanup on unmount or when autoScrollEnabled changes
     return () => {
@@ -116,12 +116,14 @@ const ShopBySlider = () => {
 <div >
   <div style={{padding:"13px" , borderRadius:"50px" , width:"200px" , backgroundColor:"#d36e6e"}}>
  <h2 style={{fontSize:"32px"}} className="font-light text-2xl md:text-3xl font- text-gray-900 animate-bounce-soft">
-    New <span style={{ color: "#cfa84b", fontWeight:"400"}}>Arrivals</span>
+    New <span style={{ color: "#3f51b5", fontWeight:"400"}}>Arrivals</span>
   </h2>
   </div>
  
 
-  <p style={{fontSize:"24px"}} className="font-main text-gray-600 mt-2 font-lato">
+  {/* <p style={{fontSize:"24px"}} className="font-main font-light text-gray-600 mt-2 font-lato"> */}
+    <p style={{fontSize:"18px"}} className="font-lato font-main  text-xs tracking-[0.05em] text-gray-800 mt-5">
+
     Browse through our curated collections
   </p>
 </div>

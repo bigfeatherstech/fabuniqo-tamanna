@@ -179,6 +179,8 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import vjs231 from "../../assets/vjs-231-silverWhite (3).png"
 import Rss206 from "../../assets/Rss-206  (2).png";
+import Rss202a from "../../assets/Rss-202 (1).png"
+import vjs230a from "../../assets/vjs-230 (5).png"
 
 
 
@@ -209,13 +211,15 @@ const EliteBanner = () => {
       <div className="relative h-full max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-center lg:justify-start">
         
         {/* DESKTOP IMAGE */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] h-[120%] hidden lg:block">
+        {/* <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[45%] h-[120%] hidden lg:block"> */}
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[35%] h-[120%] hidden lg:block">
+
           <div className="relative w-full h-full overflow-hidden group shadow-2xl">
             <img 
               // src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=1000&q=80" 
-              src={Rss206}
+              src={vjs230a}
               alt="Luxury Jewelry"
-              className="w-full h-full object-cover grayscale transition-transform duration-[2s] group-hover:scale-110 group-hover:grayscale-0"
+              className="w-full h-full object-contain grayscale transition-transform duration-[2s] group-hover:scale-110 group-hover:grayscale-0"
             />
             <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors" />
           </div>

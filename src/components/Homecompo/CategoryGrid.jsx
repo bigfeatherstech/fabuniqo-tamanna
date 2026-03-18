@@ -5,6 +5,8 @@ import RsetRed from "../../assets/Rset-red (2).png";
 import Rss203 from "../../assets/Rss - 203 (4).png";
 import vjs230 from "../../assets/vjs-230 (1).png";
 import vjs231 from "../../assets/vjs-232 (1).png";
+import gift1 from "../../assets/gift1.png"
+import gift2 from "../../assets/gift2.png"
 
 
 import Rssred  from "../../assets/Rset-red (2).png"
@@ -85,10 +87,10 @@ const CategoryGrid = () => {
     //   img: RsetRed,
     // },
     
-    // { 
-    //   name: 'Gifting', 
-    //   img: vjs231
-    // },
+    { 
+      name: 'Gifting', 
+      img: gift2
+    },
 
   ];
 
@@ -103,13 +105,13 @@ const CategoryGrid = () => {
         </div>
 
         {/* Full-Space Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div  className=" grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-8">
           {categories.map((category, index) => (
-            <div key={index} className="group cursor-pointer">
+            <div  key={index} className="group cursor-pointer">
               <div className="flex flex-col">
                 
                 {/* Image Container - No Padding, Full Space */}
-                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-gray-100 mb-5 border border-gray-100 shadow-sm transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-[rgb(209,167,67)]/20">
+                <div style={{border:"" , width:""}}  className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-gray-100 mb-5 border border-gray-100 shadow-sm transition-all duration-700 group-hover:shadow-2xl group-hover:shadow-[rgb(209,167,67)]/20">
                   <img 
                     src={category.img} 
                     alt={category.name}

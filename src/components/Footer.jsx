@@ -682,28 +682,7 @@ const Footer = () => {
 
             <div className="relative w-full pt-20">
 
-              {/* FLOATING JEWELLERY IMAGES */}
-
-              {/* <img
-                src="https://images.unsplash.com/photo-1611085583191-a3b181a88401"
-                className="absolute w-24 lg:w-32 top-10 left-10 animate-floatSlow opacity-70"
-              />
-
-              <img
-                src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1"
-                className="absolute w-20 lg:w-28 bottom-10 left-32 animate-floatSlow2 opacity-70"
-              />
-
-              <img
-                src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"
-                className="absolute w-24 lg:w-32 top-0 right-20 animate-floatSlow opacity-70"
-              />
-
-              <img
-                src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a"
-                className="absolute w-20 lg:w-28 bottom-16 right-10 animate-floatSlow2 opacity-70"
-              /> */}
-
+            
               <svg viewBox="0 0 1000 250" className="w-full h-auto overflow-visible">
 
                 <defs>
@@ -894,7 +873,7 @@ const Footer = () => {
               Follow us for latest collections & offers
               </h3>
 
-              <div className="flex gap-4">
+              {/* <div className="flex gap-4">
 
                 <a className="bg-gradient-to-tr from-yellow-400 to-pink-500 p-3 rounded-full hover:scale-110 transition">
                   <FaInstagram />
@@ -917,16 +896,42 @@ const Footer = () => {
                   <FaYoutube />
                 </a>
 
-                {/* <a className="bg-black p-3 rounded-full hover:scale-110 transition">
-                  <FaXTwitter />
-                </a> */}
+             
 
    <a className="bg-blue-400 p-3 rounded-full hover:scale-110 transition">
                   <FaXTwitter />
                 </a>
 
-{/* <img style={{width:"30px" , padding:"20px", margin:"-10px"}} src={twitter} alt="Twitter" /> */}
-              </div>
+
+              </div> */}
+
+<div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center sm:justify-start">
+
+  <a className="bg-gradient-to-tr from-yellow-400 to-pink-500 p-2 sm:p-3 rounded-full hover:scale-110 transition">
+    <FaInstagram className="text-sm sm:text-base" />
+  </a>
+
+  <a className="bg-blue-600 p-2 sm:p-3 rounded-full hover:scale-110 transition">
+    <FaFacebookF className="text-sm sm:text-base" />
+  </a>
+
+  <a className="bg-green-500 p-2 sm:p-3 rounded-full hover:scale-110 transition">
+    <FaWhatsapp className="text-sm sm:text-base" />
+  </a>
+
+  <a className="bg-red-500 p-2 sm:p-3 rounded-full hover:scale-110 transition">
+    <FaPinterestP className="text-sm sm:text-base" />
+  </a>
+
+  <a className="bg-red-600 p-2 sm:p-3 rounded-full hover:scale-110 transition">
+    <FaYoutube className="text-sm sm:text-base" />
+  </a>
+
+  <a className="bg-blue-400 p-2 sm:p-3 rounded-full hover:scale-110 transition">
+    <FaXTwitter className="text-sm sm:text-base" />
+  </a>
+
+</div>
 
             </div>
 

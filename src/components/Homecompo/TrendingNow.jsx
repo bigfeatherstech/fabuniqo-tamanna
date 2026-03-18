@@ -270,6 +270,7 @@ import vjs230 from "../../assets/vjs-231-rosegold (1).png"
 import vjs231 from "../../assets/vjs-231-silverWhite (3).png"
 import Egur158 from "../../assets/Egur 158 Red (3).png"
 import Egur159 from "../../assets/Egur-159-Green (1).png"
+import vjs232a from "../../assets/vjs-232 (1).png"
 
 const TrendingNow = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -285,9 +286,9 @@ const TrendingNow = () => {
       tag: '#DiamondElegance', 
       items: 245,
          description: "Diamond Pendant Necklace Set",
-                image : vjs231,
+                image : vjs232a,
             category: "Set",
-      iconImage: vjs231,
+      iconImage: vjs232a,
       growth: '+45%',
       jewelry: 'Diamond',
       color: 'from-blue-400/20 to-blue-600/20'
@@ -418,21 +419,22 @@ const TrendingNow = () => {
         </div>
 
         {/* Trends Grid with Real Images */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+        <div   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {trends.map((trend, index) => (
             <div
+          
               key={index}
               className={`group relative transform transition-all duration-700 ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${index * 100}ms`}}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="relative bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-gray-100 hover:border-[rgb(209,167,67)]/30 hover:shadow-2xl hover:shadow-[rgb(209,167,67)]/10 transition-all duration-500 group-hover:-translate-y-1">
+              <div style={{borderRadius:"16%"}} className="relative bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-gray-100 hover:border-[rgb(209,167,67)]/30 hover:shadow-2xl hover:shadow-[rgb(209,167,67)]/10 transition-all duration-500 group-hover:-translate-y-1">
                 
                 {/* Image Container */}
-                <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
+                <div style={{border:""}} className="relative h-40 sm:h-44 md:h-80 overflow-hidden">
                   {/* Background Gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${trend.color} opacity-60 group-hover:opacity-40 transition-opacity duration-500`}></div>
                   
@@ -447,7 +449,7 @@ const TrendingNow = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   
                   {/* Trending Badge with Animation */}
-                  <div className=" absolute top-3 right-3">
+                  <div className=" absolute top-3 right-3 animate-heartbeat">
                     <div className=" relative">
                       <div className="bg-fab-pink absolute inset-0  rounded-full blur-md opacity-50 group-hover:opacity-75 transition-opacity animate-pulse"></div>
                       <div className="bg-fab-pink relative px-3 py-1.5  rounded-full text-white text-xs font-bold flex items-center gap-1 shadow-lg">

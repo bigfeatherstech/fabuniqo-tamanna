@@ -1139,6 +1139,7 @@ const ProductDetail = () => {
     // Calculate mouse position as percentage
     let x = ((e.clientX - rect.left) / rect.width) * 100;
     let y = ((e.clientY - rect.top) / rect.height) * 100;
+
     
     // Constrain values between 0 and 100
     x = Math.max(0, Math.min(100, x));
@@ -1181,9 +1182,13 @@ const ProductDetail = () => {
     loadImageAsDataUrl();
   }, [mainImage]);
 
+  function handleGoBack (){
+    navigate(-1)
+  }
+
   return (
     <section className="bg-[#fafafa] pb-16">
-
+ <p style={{cursor:"pointer" , marginLeft:"18%"}} onClick={handleGoBack}>Go Back</p>
       {/* HERO BANNER */}
       <div className="w-full bg-[#f5f5f5] py-8 mb-10">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6">

@@ -43,7 +43,7 @@
 //       rating: 4.8,
 //       reviews: 126,
 //           // image: "https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=500&auto=format&fit=crop"
-    
+
 //       image: Rssred},
 //     {
 //       id: 2,
@@ -53,7 +53,7 @@
 //       price: "₹3,999",
 //       rating: 4.7,
 //       reviews: 94,
-     
+
 //     },
 //     {
 //       id: 3,
@@ -64,8 +64,8 @@
 //       rating: 4.6,
 //       reviews: 82,
 //       // image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&auto=format&fit=crop"
-    
-    
+
+
 //     },
 //     {
 //       id: 4,
@@ -76,7 +76,7 @@
 //       rating: 4.9,
 //       reviews: 142,
 //           // image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop"
-   
+
 //   },
 //     {
 //       id: 5,
@@ -87,7 +87,7 @@
 //       rating: 4.8,
 //       reviews: 73,
 //       // image: "https://media.istockphoto.com/id/1395172510/photo/mangalsutra-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=pWwaOwx8bpr6Use0B4ODAS2l_-8u1joFJl2KWiT5prU="
- 
+
 //     },
 //     {
 //       id: 6,
@@ -142,7 +142,7 @@
 //       rating: 4.7,
 //       reviews: 94,
 //       // image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop"
-  
+
 //     },
 //     {
 //       id: 11,
@@ -153,7 +153,7 @@
 //       rating: 4.6,
 //       reviews: 82,
 //       // image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500&auto=format&fit=crop"
-  
+
 //     },
 //     {
 //       id: 12,
@@ -164,7 +164,7 @@
 //       rating: 4.9,
 //       reviews: 142,
 //       // image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop"
-  
+
 //     },
 //   ];
 
@@ -794,7 +794,7 @@
 
 import React, { useState } from "react";
 import { Heart, ShoppingBag, Eye, Zap, Star } from "lucide-react";
-import Rssred  from "../../assets/Rset-red (2).png"
+import Rssred from "../../assets/Rset-red (2).png"
 import Rss203 from "../../assets/Rss - 203 (4).png"
 import Rss203a from "../../assets/Rss - 203 (1).png";
 import Rss203b from "../../assets/Rss - 203 (2).png";
@@ -840,7 +840,8 @@ const NewArrivals = () => {
       weight: "2.5g",
       inStock: true,
       sku: "DS-E-001",
-      images: [Rssred, Rss203, Rss201, vjs231]
+      images: [Rssred, Rss203, Rss201, vjs231],
+            sold: 90,
     },
     {
       id: 2,
@@ -851,7 +852,7 @@ const NewArrivals = () => {
       originalPrice: "₹7,999",
       rating: 4.7,
       reviews: 94,
-      discount: 50,
+      discount: 20,
       description: "A touch of timeless charm to your jewelry collection with this 925 Pure Silver Chain Pendant Set. Designed with fine detailing and a smooth finish, it offers a graceful look that complements both ethnic and western outfits.",
       material: "925 Sterling Silver",
       color: "Multicolor",
@@ -860,7 +861,8 @@ const NewArrivals = () => {
       weight: "4.2g",
       inStock: true,
       sku: "MS-S-002",
-      images: [Rss203, Rss203a, Rss203b, Rss203c]
+      images: [Rss203, Rss203a, Rss203b, Rss203c],
+            sold: 12,
     },
     {
       id: 3,
@@ -871,7 +873,7 @@ const NewArrivals = () => {
       originalPrice: "₹5,799",
       rating: 4.6,
       reviews: 82,
-      discount: 50,
+      discount: 10,
       description: "A touch of timeless charm to your jewelry collection with this 925 Pure Silver Chain Pendant Set. Designed with fine detailing and a smooth finish, it offers a graceful look that complements both ethnic and western outfits.",
       material: "925 Sterling Silver",
       color: "White Gold",
@@ -880,7 +882,8 @@ const NewArrivals = () => {
       weight: "3.8g",
       inStock: true,
       sku: "PM-S-003",
-      images: [Rss201, Rss203, Rssred, vjs231]
+      images: [Rss201, Rss203, Rssred, vjs231],
+            sold: 124,
     },
     {
       id: 4,
@@ -900,7 +903,8 @@ const NewArrivals = () => {
       weight: "3.2g",
       inStock: true,
       sku: "DP-N-004",
-      images: [vjs231, Rss203, Rss201, Rssred]
+      images: [vjs231, Rss203, Rss201, Rssred],
+            sold: 20,
     },
     {
       id: 5,
@@ -920,7 +924,8 @@ const NewArrivals = () => {
       weight: "6.5g",
       inStock: true,
       sku: "TB-S-005",
-      images: [Rss205, Rss203, Rss201, vjs231]
+      images: [Rss205, Rss203, Rss201, vjs231],
+            sold: 224,
     },
     {
       id: 6,
@@ -931,7 +936,7 @@ const NewArrivals = () => {
       originalPrice: "₹19,999",
       rating: 4.9,
       reviews: 210,
-      discount: 50,
+      discount: 10,
       description: "A touch of timeless charm to your jewelry collection with this 925 Pure Silver Chain Pendant Set. Designed with fine detailing and a smooth finish, it offers a graceful look that complements both ethnic and western outfits.",
       material: "925 Sterling Silver",
       color: "Rose Gold",
@@ -940,7 +945,8 @@ const NewArrivals = () => {
       weight: "8.2g",
       inStock: true,
       sku: "EJ-S-006",
-      images: [vjs230, Rss203, Rss201, vjs231]
+      images: [vjs230, Rss203, Rss201, vjs231],
+            sold: 12,
     },
     {
       id: 7,
@@ -951,7 +957,7 @@ const NewArrivals = () => {
       originalPrice: "₹6,399",
       rating: 4.7,
       reviews: 89,
-      discount: 50,
+      discount: 20,
       description: "A touch of timeless charm to your jewelry collection with this 925 Pure Silver Chain Pendant Set. Designed with fine detailing and a smooth finish, it offers a graceful look that complements both ethnic and western outfits.",
       material: "925 Sterling Silver",
       color: "Silver",
@@ -960,7 +966,8 @@ const NewArrivals = () => {
       weight: "3.5g",
       inStock: true,
       sku: "DP-S-007",
-      images: [vjs231, Rss203, Rss201, Rssred]
+      images: [vjs231, Rss203, Rss201, Rssred],
+            sold: 100,
     },
     {
       id: 8,
@@ -971,7 +978,7 @@ const NewArrivals = () => {
       originalPrice: "₹4,599",
       rating: 4.5,
       reviews: 65,
-      discount: 50,
+      discount: 30,
       description: "A touch of timeless charm to your jewelry collection with this 925 Pure Silver Chain Pendant Set. Designed with fine detailing and a smooth finish, it offers a graceful look that complements both ethnic and western outfits.",
       material: "925 Sterling Silver",
       color: "Yellow Gold",
@@ -980,7 +987,8 @@ const NewArrivals = () => {
       weight: "2.8g",
       inStock: true,
       sku: "YB-S-008",
-      images: [Rss206, Rss203, Rss201, vjs231]
+      images: [Rss206, Rss203, Rss201, vjs231],
+            sold: 24,
     },
     {
       id: 9,
@@ -1000,7 +1008,8 @@ const NewArrivals = () => {
       weight: "1.8g",
       inStock: true,
       sku: "GS-E-009",
-      images: [Rss222, Rss203, Rss201, vjs231]
+      images: [Rss222, Rss203, Rss201, vjs231],
+            sold: 224,
     },
     {
       id: 10,
@@ -1011,7 +1020,7 @@ const NewArrivals = () => {
       originalPrice: "₹7,999",
       rating: 4.7,
       reviews: 94,
-      discount: 50,
+      discount: 10,
       description: "A touch of timeless charm to your jewelry collection with this 925 Pure Silver Chain Pendant Set. Designed with fine detailing and a smooth finish, it offers a graceful look that complements both ethnic and western outfits.",
       material: "925 Sterling Silver",
       color: "Gold",
@@ -1020,7 +1029,8 @@ const NewArrivals = () => {
       weight: "5.2g",
       inStock: true,
       sku: "EG-S-010",
-      images: [Rss225, Rss203, Rss201, vjs231]
+      images: [Rss225, Rss203, Rss201, vjs231],
+            sold: 50,
     },
     {
       id: 11,
@@ -1031,7 +1041,7 @@ const NewArrivals = () => {
       originalPrice: "₹5,799",
       rating: 4.6,
       reviews: 82,
-      discount: 50,
+      discount: 30,
       description: "A touch of timeless charm to your jewelry collection with this 925 Pure Silver Chain Pendant Set. Designed with fine detailing and a smooth finish, it offers a graceful look that complements both ethnic and western outfits.",
       material: "925 Sterling Silver",
       color: "Rose Gold",
@@ -1040,7 +1050,8 @@ const NewArrivals = () => {
       weight: "2.2g",
       inStock: true,
       sku: "RE-E-011",
-      images: [Egur158, Rss203, Rss201, vjs231]
+      images: [Egur158, Rss203, Rss201, vjs231],
+            sold: 14,
     },
     {
       id: 12,
@@ -1060,7 +1071,9 @@ const NewArrivals = () => {
       weight: "2.4g",
       inStock: true,
       sku: "GE-E-012",
-      images: [Egur159, Rss203, Rss201, vjs231]
+      images: [Egur159, Rss203, Rss201, vjs231],
+            sold: 124,
+
     },
   ];
 
@@ -1072,6 +1085,8 @@ const NewArrivals = () => {
     setVisibleProducts(prev => prev + 4);
   };
 
+
+  
   return (
     <section className="py-16 bg-white">
 
@@ -1114,8 +1129,25 @@ const NewArrivals = () => {
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                 
+
                 />
+
+
+                 {/* Discount Badge */}
+                 {item.discount > 0 && (
+                   <div className="absolute top-3 left-3 bg-fab-pink text-white text-xs font-bold px-2 py-1 rounded animate-heartbeat">
+                     {item.discount}% OFF
+                   </div>
+                 )}
+   {/* Sold Badge */}
+                <div className="absolute top-3 right-3">
+                  <span className="px-3 py-1 bg-black/80 text-white text-xs rounded-full backdrop-blur-sm">
+                    🔥 {item.sold} sold
+                  </span>
+                </div>
+
+
+
 
                 <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 
@@ -1151,9 +1183,25 @@ const NewArrivals = () => {
                   </span>
                 </div>
 
-                <div className="text-sm font-bold mb-4" style={{ color: fabuniqoGold }}>
+                {/* <div className="text-sm font-bold mb-4" style={{ color: fabuniqoGold }}>
                   {item.price}
-                </div>
+                </div> */}
+
+                <div className="flex items-center gap-2 mb-4">
+                   <span className="text-sm font-bold" style={{ color: fabuniqoGold }}>
+                     ₹{item.price.toLocaleString()}
+                   </span>
+                  {item.originalPrice && (
+                    <>
+                       <span className="text-xs text-gray-400 line-through">
+                         ₹{item.originalPrice.toLocaleString()}
+                       </span>
+                       {/* <span className="text-xs text-green-600 font-medium">
+                         {item.discount}% off
+                       </span> */}
+                     </>
+                   )}
+                 </div>
 
                 <button className="w-full py-2 text-xs font-semibold rounded bg-fab-lightpink text-gray-800 hover:bg-fab-pink hover:text-white transition flex items-center justify-center gap-2  group-hover:text-white">
                   <ShoppingBag className="w-3 h-3" />
@@ -1191,12 +1239,14 @@ const NewArrivals = () => {
                 style={{ backgroundColor: "rgb(209,167,67)" }}
               ></span>
 
+
             </button>
 
           </div>
 
         )}
 
+     
       </div>
 
     </section>
@@ -1204,3 +1254,9 @@ const NewArrivals = () => {
 };
 
 export default NewArrivals;
+
+
+
+
+
+
